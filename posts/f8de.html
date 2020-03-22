@@ -5,7 +5,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="git和github入门实践, Leroy">
-    <meta name="description" content="Git与GitHub简介Git与GitHub的来历Linux 之父 Linus 在 1991 年创建开源的 Linux 操作系统之后，多年来依靠全世界广大热心志愿者的共同建设，经过长足发展，现已成为世界上最大的服务器系统。系统创建之初，代码">
+    <meta name="description" content="Table of Contents  generated with DocToc
+
+Git与GitHub简介
+Git与GitHub的来历
+
+
+Git是用来干嘛的?
+在GitHub上创建仓库
+安装Git
+克隆GitHub上的仓库到本地
+Git">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -429,17 +439,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Git/">
-                                <span class="chip bg-color">Git</span>
-                            </a>
-                        
-                            <a href="/tags/GitHub/">
-                                <span class="chip bg-color">GitHub</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -460,7 +462,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.6k
+                    2.8k
                 </div>
                 
 
@@ -473,7 +475,50 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Git与GitHub简介"><a href="#Git与GitHub简介" class="headerlink" title="Git与GitHub简介"></a>Git与GitHub简介</h1><h2 id="Git与GitHub的来历"><a href="#Git与GitHub的来历" class="headerlink" title="Git与GitHub的来历"></a>Git与GitHub的来历</h2><p>Linux 之父 Linus 在 1991 年创建开源的 Linux 操作系统之后，多年来依靠全世界广大热心志愿者的共同建设，经过长足发展，现已成为世界上最大的服务器系统。系统创建之初，代码贡献者将源码文件发送给 Linus，由其手动合并。这种方式维持多年后，代码量已经庞大到人工合并难以为继，于是深恶集中式版本控制系统的 Linus 选择了一个分布式商业版本控制系统 BitKeeper，不过 Linux 社区的建设者们可以免费使用它。BitKeeper 改变了 Linus 对版本控制的认识，同时 Linus 发现 BitKeeper 有一些不足，而且有个关键性的问题使之不能被广泛使用，就是不开源。</p>
+                <p><strong>Table of Contents</strong>  <em>generated with <a href="https://github.com/thlorenz/doctoc" target="_blank" rel="noopener">DocToc</a></em></p>
+<ul>
+<li><a href="#git%E4%B8%8Egithub%E7%AE%80%E4%BB%8B">Git与GitHub简介</a><ul>
+<li><a href="#git%E4%B8%8Egithub%E7%9A%84%E6%9D%A5%E5%8E%86">Git与GitHub的来历</a></li>
+</ul>
+</li>
+<li><a href="#git%E6%98%AF%E7%94%A8%E6%9D%A5%E5%B9%B2%E5%98%9B%E7%9A%84">Git是用来干嘛的?</a></li>
+<li><a href="#%E5%9C%A8github%E4%B8%8A%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93">在GitHub上创建仓库</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85git">安装Git</a></li>
+<li><a href="#%E5%85%8B%E9%9A%86github%E4%B8%8A%E7%9A%84%E4%BB%93%E5%BA%93%E5%88%B0%E6%9C%AC%E5%9C%B0">克隆GitHub上的仓库到本地</a><ul>
+<li><a href="#git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C">Git基本操作</a></li>
+</ul>
+</li>
+<li><a href="#git%E4%BB%93%E5%BA%93%E7%9A%84%E4%B8%89%E5%A4%A7%E5%8C%BA%E5%9F%9F">Git仓库的三大区域</a></li>
+<li><a href="#%E4%B8%80%E6%AC%A1%E5%AE%8C%E6%88%90%E7%9A%84%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E6%8E%A8%E9%80%81%E6%93%8D%E4%BD%9C">一次完成的修改、提交、推送操作</a><ul>
+<li><a href="#%E7%AE%80%E5%8D%95%E6%9D%A5%E8%AF%B4">简单来说</a></li>
+<li><a href="#%E5%85%B7%E4%BD%93%E6%9D%A5%E8%AF%B4">具体来说</a></li>
+</ul>
+</li>
+<li><a href="#%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80">版本回退</a><ul>
+<li><a href="#%E7%AE%80%E5%8D%95%E6%9D%A5%E8%AF%B4-1">简单来说</a></li>
+<li><a href="#%E5%85%B7%E4%BD%93%E6%9D%A5%E8%AF%B4-1">具体来说</a></li>
+</ul>
+</li>
+<li><a href="#%E6%92%A4%E9%94%80%E4%BF%AE%E6%94%B9">撤销修改</a><ul>
+<li><a href="#%E5%AF%B9%E5%B7%A5%E4%BD%9C%E5%8C%BA%E7%9A%84%E6%92%A4%E9%94%80">对工作区的撤销</a></li>
+<li><a href="#%E5%AF%B9%E6%9A%82%E5%AD%98%E5%8C%BA%E7%9A%84%E6%92%A4%E9%94%80">对暂存区的撤销</a></li>
+<li><a href="#github">GitHub</a></li>
+</ul>
+</li>
+<li><a href="#github%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE">GitHub基本配置</a></li>
+<li><a href="#%E6%B7%BB%E5%8A%A0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93">添加远程仓库</a></li>
+<li><a href="#%E4%BB%8E%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%85%8B%E9%9A%86">从远程仓库克隆</a><ul>
+<li><a href="#%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86">分支管理</a></li>
+</ul>
+</li>
+<li><a href="#%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF">创建与合并分支</a></li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+<hr>
+<p>title: git和github入门实践<br>abbrlink: f8de<br>date: 2020-03-21 14:03:44<br>tags:<br>    - Git<br>    - GitHub</p>
+<hr>
+<h2 id="Git与GitHub简介"><a href="#Git与GitHub简介" class="headerlink" title="Git与GitHub简介"></a>Git与GitHub简介</h2><h3 id="Git与GitHub的来历"><a href="#Git与GitHub的来历" class="headerlink" title="Git与GitHub的来历"></a>Git与GitHub的来历</h3><p>Linux 之父 Linus 在 1991 年创建开源的 Linux 操作系统之后，多年来依靠全世界广大热心志愿者的共同建设，经过长足发展，现已成为世界上最大的服务器系统。系统创建之初，代码贡献者将源码文件发送给 Linus，由其手动合并。这种方式维持多年后，代码量已经庞大到人工合并难以为继，于是深恶集中式版本控制系统的 Linus 选择了一个分布式商业版本控制系统 BitKeeper，不过 Linux 社区的建设者们可以免费使用它。BitKeeper 改变了 Linus 对版本控制的认识，同时 Linus 发现 BitKeeper 有一些不足，而且有个关键性的问题使之不能被广泛使用，就是不开源。</p>
 <p>在 2005 年，BitKeeper 所在公司发现 Linux 社区有人企图破解它，BitKeeper 决定收回 Linux 社区的免费使用权。Linus 对此事调节数周无果，找遍了当时已知的各种版本控制系统，没有一个看上眼的，一怒之下决定自己搞一个。Linus 花了十天时间用 C 语言写好了一个开源的版本控制系统，就是著名的 Git。</p>
 <p>2007 年旧金山三个年轻人觉得 Git 是个好东西，就搞了一个公司名字叫 GitHub，第二年上线了使用 Ruby 编写的同名网站 GitHub，这是一个基于 Git 的免费代码托管网站（有付费服务）。十年间，该网站迅速蹿红，击败了实力雄厚的 Google Code，成为全世界最受欢迎的代码托管网站。2018 年 6 月，GitHub 被财大气粗的 Microsoft 收购。2019 年 1 月 GitHub 宣布用户可以免费创建私有仓库。根据 2018 年 10 月的 GitHub 年度报告显示，目前有 3100 万开发者创建了 9600 万个项目仓库，有 210 万企业入驻。</p>
 <h2 id="Git是用来干嘛的"><a href="#Git是用来干嘛的" class="headerlink" title="Git是用来干嘛的?"></a>Git是用来干嘛的?</h2><p>用来版本控制。通常我们修改了代码以后，发布新的版本以后，老版本是不可逆的，甚至多次修改可能会造成文件的混乱。这时，我们可以使用Git来进行控制，它可以方便的查看不同版本的不同之处，可以回退到老版本上。</p>
@@ -603,15 +648,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/Git/">
-                                    <span class="chip bg-color">Git</span>
-                                </a>
-                            
-                                <a href="/tags/GitHub/">
-                                    <span class="chip bg-color">GitHub</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -716,7 +753,17 @@ Markdown语法标题​    # 一级标题
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Git与GitHub简介Git与GitHub的来历Linux 之父 Linus 在 1991 年创建开源的 Linux 操作系统之后，多年来依靠全世界广大热心志愿者的共同建设，经过长足发展，现已成为世界上最大的服务器系统。系统创建之初，代码
+                            Table of Contents  generated with DocToc
+
+Git与GitHub简介
+Git与GitHub的来历
+
+
+Git是用来干嘛的?
+在GitHub上创建仓库
+安装Git
+克隆GitHub上的仓库到本地
+Git
                         
                     </div>
                     <div class="publish-info">
@@ -732,18 +779,6 @@ Markdown语法标题​    # 一级标题
                     </div>
                 </div>
 
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Git/">
-                        <span class="chip bg-color">Git</span>
-                    </a>
-                    
-                    <a href="/tags/GitHub/">
-                        <span class="chip bg-color">GitHub</span>
-                    </a>
-                    
-                </div>
                 
             </div>
         </div>
@@ -890,7 +925,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.8k</span>&nbsp;字
+                class="white-color">3k</span>&nbsp;字
             
             
             
