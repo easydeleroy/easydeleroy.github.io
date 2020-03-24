@@ -4,13 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Markdown入门指南, Leroy">
-    <meta name="description" content="前沿Markdown是一种轻量级的标记语言，非常的简单，常用的符号不超过十个。
-Markdown语法标题​    # 一级标题
-​    ## 二级标题
-​    ### 三级标题
-​    总共有六个标题
-列表​    列表分为有序列表和">
+    <meta name="keywords" content="linux基础入门（二）-vim基础入门, Leroy">
+    <meta name="description" content="Vim模式普通模式​    在普通模式中，用的编辑器命令，比如移动光标，删除文本等等。这也是Vim启动后的默认模式。
+插入模式​    在这个模式中，大多数按键都会向文本缓冲中插入文本。在普通模式下按i进入，esc退出。
+可视模式​    ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +15,7 @@ Markdown语法标题​    # 一级标题
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Markdown入门指南 | Leroy</title>
+    <title>linux基础入门（二）-vim基础入门 | Leroy</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -314,12 +311,12 @@ Markdown语法标题​    # 一级标题
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Markdown入门指南</h1>
+                    <h1 class="description center-align post-title">linux基础入门（二）-vim基础入门</h1>
                 </div>
             </div>
         </div>
@@ -436,8 +433,12 @@ Markdown语法标题​    # 一级标题
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Markdown/">
-                                <span class="chip bg-color">Markdown</span>
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
+                            </a>
+                        
+                            <a href="/tags/Vim/">
+                                <span class="chip bg-color">Vim</span>
                             </a>
                         
                     </div>
@@ -452,7 +453,7 @@ Markdown语法标题​    # 一级标题
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-21
+                    2020-03-24
                 </div>
                 
 
@@ -461,7 +462,7 @@ Markdown语法标题​    # 一级标题
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    197
+                    1k
                 </div>
                 
 
@@ -474,25 +475,288 @@ Markdown语法标题​    # 一级标题
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="前沿"><a href="#前沿" class="headerlink" title="前沿"></a>前沿</h1><p>Markdown是一种轻量级的标记语言，非常的简单，常用的符号不超过十个。</p>
-<h1 id="Markdown语法"><a href="#Markdown语法" class="headerlink" title="Markdown语法"></a>Markdown语法</h1><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>​    <code># 一级标题</code></p>
-<p>​    <code>## 二级标题</code></p>
-<p>​    <code>### 三级标题</code></p>
-<p>​    总共有六个标题</p>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>​    列表分为有序列表和无序列表</p>
+                <h2 id="Vim模式"><a href="#Vim模式" class="headerlink" title="Vim模式"></a>Vim模式</h2><h3 id="普通模式"><a href="#普通模式" class="headerlink" title="普通模式"></a>普通模式</h3><p>​    在普通模式中，用的编辑器命令，比如移动光标，删除文本等等。这也是Vim启动后的默认模式。</p>
+<h3 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h3><p>​    在这个模式中，大多数按键都会向文本缓冲中插入文本。在普通模式下按<code>i</code>进入，<code>esc</code>退出。</p>
+<h3 id="可视模式"><a href="#可视模式" class="headerlink" title="可视模式"></a>可视模式</h3><p>​    这个模式与普通模式比较相似。但是移动命令会扩大高亮的文本区域。高亮区域可以是字符、行或者是一块文本。当执行一个非移动命令时，命令会被执行到这块高亮的区域上。</p>
+<h3 id="选择模式"><a href="#选择模式" class="headerlink" title="选择模式"></a>选择模式</h3><p>​    这个模式中，可以用鼠标或者光标键高亮选择文本，不过输入任何字符的话，Vim会用这个字符替换选择的高亮文本块，并且自动进入插入模式。</p>
+<h3 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h3><p>​    在命令行模式中可以输入会被解释成并执行的文本。例如执行命令（<code>:</code>键），搜索（<code>/</code>和<code>?</code>键）或者过滤命令（<code>!</code>键）。在命令执行之后，Vim返回到命令行模式之前的模式，通常是普通模式。</p>
+<p>我们常用的是普通模式、插入模式、命令行模式。</p>
+<h2 id="模式操作"><a href="#模式操作" class="headerlink" title="模式操作"></a>模式操作</h2><h3 id="模式切换"><a href="#模式切换" class="headerlink" title="模式切换"></a>模式切换</h3><p>​    vim启动时为普通模式，当在插入模式或命令行模式时按住<code>esc</code>可退出进入普通模式；普通模式下按<code>i</code>进入插入模式；普通模式下按<code>:</code>进入命令行模式；在命令行模式下输入:<code>wq 回车</code> 会保存并退出vim。</p>
+<h3 id="普通模式-1"><a href="#普通模式-1" class="headerlink" title="普通模式"></a>普通模式</h3><h4 id="游标移动"><a href="#游标移动" class="headerlink" title="游标移动"></a>游标移动</h4><table>
+<thead>
+<tr>
+<th align="center">按键</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">h</td>
+<td align="center">左</td>
+</tr>
+<tr>
+<td align="center">l</td>
+<td align="center">右</td>
+</tr>
+<tr>
+<td align="center">j</td>
+<td align="center">下</td>
+</tr>
+<tr>
+<td align="center">l</td>
+<td align="center">上</td>
+</tr>
+<tr>
+<td align="center">w</td>
+<td align="center">移动到下一个单词</td>
+</tr>
+<tr>
+<td align="center">b</td>
+<td align="center">移动到上一个单词</td>
+</tr>
+</tbody></table>
+<h4 id="删除文本"><a href="#删除文本" class="headerlink" title="删除文本"></a>删除文本</h4><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">x</td>
+<td align="center">删除游标所在字符</td>
+</tr>
+<tr>
+<td align="center">X</td>
+<td align="center">删除游标所在前一个字符</td>
+</tr>
+<tr>
+<td align="center">Delete</td>
+<td align="center">同x</td>
+</tr>
+<tr>
+<td align="center">dd</td>
+<td align="center">删除整行</td>
+</tr>
+<tr>
+<td align="center">dw</td>
+<td align="center">删除一个单词</td>
+</tr>
+<tr>
+<td align="center">d$或D</td>
+<td align="center">删除至行尾</td>
+</tr>
+<tr>
+<td align="center">d^</td>
+<td align="center">删除至行首</td>
+</tr>
+<tr>
+<td align="center">dG</td>
+<td align="center">删除到文档结尾处</td>
+</tr>
+<tr>
+<td align="center">d1G</td>
+<td align="center">删除至文档首部</td>
+</tr>
+<tr>
+<td align="center">数字dd</td>
+<td align="center">删除指定行数</td>
+</tr>
+</tbody></table>
+<h4 id="重复命令"><a href="#重复命令" class="headerlink" title="重复命令"></a>重复命令</h4><p>在普通模式下 <code>.</code>表示重复上一次的命令操作</p>
+<h4 id="游标快速移动"><a href="#游标快速移动" class="headerlink" title="游标快速移动"></a>游标快速移动</h4><ul>
+<li>行间跳转</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">nG</td>
+<td align="center">游标移动到第n行</td>
+</tr>
+<tr>
+<td align="center">gg</td>
+<td align="center">游标移动到第一行</td>
+</tr>
+<tr>
+<td align="center">G</td>
+<td align="center">游标移动到最后一行</td>
+</tr>
+</tbody></table>
 <ul>
-<li>无序列表<br><code>-</code> 或 <code>*</code></li>
-<li>有序列表<br><code>1. 2. 3.</code></li>
+<li><p>行内跳转</p>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">w</td>
+<td align="center">到下一个单词的开头</td>
+</tr>
+<tr>
+<td align="center">e</td>
+<td align="center">到当前单词的结尾</td>
+</tr>
+<tr>
+<td align="center">b</td>
+<td align="center">到前一个单词的开头</td>
+</tr>
+<tr>
+<td align="center">ge</td>
+<td align="center">到前一个单词的结尾</td>
+</tr>
+<tr>
+<td align="center">0或^</td>
+<td align="center">到行头</td>
+</tr>
+<tr>
+<td align="center">$</td>
+<td align="center">到行尾</td>
+</tr>
+<tr>
+<td align="center">f&lt;字母&gt;</td>
+<td align="center">向后搜索，并跳转到第一个匹配的位置</td>
+</tr>
+<tr>
+<td align="center">F&lt;字母&gt;</td>
+<td align="center">向前搜索，并跳转到第一个匹配的位置</td>
+</tr>
+</tbody></table>
+</li>
 </ul>
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>​    直接在文本前面加 <code>&gt;</code></p>
-<h2 id="图片与链接"><a href="#图片与链接" class="headerlink" title="图片与链接"></a>图片与链接</h2><ul>
-<li>图片 <code>![]()</code></li>
-<li>链接 <code>[]()</code></li>
-</ul>
-<h2 id="粗体与斜体"><a href="#粗体与斜体" class="headerlink" title="粗体与斜体"></a>粗体与斜体</h2><p>​    用两个<code>**</code>来表示粗体</p>
-<p>​    用一个<code>*</code>来表示斜体</p>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><h2 id="代码框"><a href="#代码框" class="headerlink" title="代码框"></a>代码框</h2><p>​    用``来包裹起来</p>
-<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>​    三个<code>***</code> 来表示一个分割线</p>
+<h4 id="复制、剪切、粘贴"><a href="#复制、剪切、粘贴" class="headerlink" title="复制、剪切、粘贴"></a>复制、剪切、粘贴</h4><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">yy</td>
+<td align="center">复制游标所在的整行(3yy表示复制3行)</td>
+</tr>
+<tr>
+<td align="center">y^</td>
+<td align="center">复制至行首</td>
+</tr>
+<tr>
+<td align="center">y$</td>
+<td align="center">复制至行尾</td>
+</tr>
+<tr>
+<td align="center">yw</td>
+<td align="center">复制一个单词</td>
+</tr>
+<tr>
+<td align="center">y2w</td>
+<td align="center">复制两个单词</td>
+</tr>
+<tr>
+<td align="center">yG</td>
+<td align="center">复制至文本末</td>
+</tr>
+<tr>
+<td align="center">y1G</td>
+<td align="center">复制至文本开头</td>
+</tr>
+<tr>
+<td align="center">p</td>
+<td align="center">粘贴至光标后</td>
+</tr>
+<tr>
+<td align="center">P</td>
+<td align="center">粘贴至光标前</td>
+</tr>
+<tr>
+<td align="center">dd</td>
+<td align="center">剪切</td>
+</tr>
+<tr>
+<td align="center">ddp</td>
+<td align="center">快速交换光标所在行与下行</td>
+</tr>
+</tbody></table>
+<h3 id="插入模式-1"><a href="#插入模式-1" class="headerlink" title="插入模式"></a>插入模式</h3><h4 id="进入插入模式"><a href="#进入插入模式" class="headerlink" title="进入插入模式"></a>进入插入模式</h4><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">i</td>
+<td align="center">在当前光标处进行编辑</td>
+</tr>
+<tr>
+<td align="center">I</td>
+<td align="center">在行首插入</td>
+</tr>
+<tr>
+<td align="center">A</td>
+<td align="center">在行末插入</td>
+</tr>
+<tr>
+<td align="center">a</td>
+<td align="center">在光标后插入编辑</td>
+</tr>
+<tr>
+<td align="center">o</td>
+<td align="center">在当前行后插入一个新行</td>
+</tr>
+<tr>
+<td align="center">O</td>
+<td align="center">在当前行前插入一个新行</td>
+</tr>
+<tr>
+<td align="center">cw</td>
+<td align="center">替换从光标所在位置后到一个单词结尾的字符</td>
+</tr>
+</tbody></table>
+<h3 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h3><h4 id="保存文件"><a href="#保存文件" class="headerlink" title="保存文件"></a>保存文件</h4><p><code>:w</code></p>
+<h4 id="退出vim"><a href="#退出vim" class="headerlink" title="退出vim"></a>退出vim</h4><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">:q!</td>
+<td align="center">强制退出</td>
+</tr>
+<tr>
+<td align="center">:q</td>
+<td align="center">退出</td>
+</tr>
+<tr>
+<td align="center">:wq!</td>
+<td align="center">强制保存并退出</td>
+</tr>
+<tr>
+<td align="center">:w &lt;文件路径&gt;</td>
+<td align="center">另存为</td>
+</tr>
+<tr>
+<td align="center">:saveas 文件路径</td>
+<td align="center">另存为</td>
+</tr>
+<tr>
+<td align="center">:x</td>
+<td align="center">保存并退出</td>
+</tr>
+<tr>
+<td align="center">:wq</td>
+<td align="center">保存并退出</td>
+</tr>
+</tbody></table>
+<p>在普通模式下按<code>Shift + zz</code> 即可保存退出vim</p>
+<h4 id="显示行号"><a href="#显示行号" class="headerlink" title="显示行号"></a>显示行号</h4><p><code>:set nu</code></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -536,7 +800,7 @@ Markdown语法标题​    # 一级标题
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="easydeleroy.github.io/posts/2879.html">easydeleroy.github.io/posts/2879.html</a>
+                    <a href="easydeleroy.github.io/posts/87fe.html">easydeleroy.github.io/posts/87fe.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -574,8 +838,12 @@ Markdown语法标题​    # 一级标题
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Markdown/">
-                                    <span class="chip bg-color">Markdown</span>
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
+                                </a>
+                            
+                                <a href="/tags/Vim/">
+                                    <span class="chip bg-color">Vim</span>
                                 </a>
                             
                         </div>
@@ -616,9 +884,62 @@ Markdown语法标题​    # 一级标题
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/87fe.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="linux基础入门（二）-vim基础入门">
+                        
+                        <span class="card-title">linux基础入门（二）-vim基础入门</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Vim模式普通模式​    在普通模式中，用的编辑器命令，比如移动光标，删除文本等等。这也是Vim启动后的默认模式。
+插入模式​    在这个模式中，大多数按键都会向文本缓冲中插入文本。在普通模式下按i进入，esc退出。
+可视模式​    
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Leroy
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/Vim/">
+                        <span class="chip bg-color">Vim</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/posts/386.html">
                     <div class="card-image">
@@ -661,9 +982,9 @@ Ctrl + z
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -677,55 +998,6 @@ Ctrl + z
                     
                     <a href="/tags/Linux/">
                         <span class="chip bg-color">Linux</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/f8de.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="git和github入门实践">
-                        
-                        <span class="card-title">git和github入门实践</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Git与GitHub简介Git与GitHub的来历Linux 之父 Linus 在 1991 年创建开源的 Linux 操作系统之后，多年来依靠全世界广大热心志愿者的共同建设，经过长足发展，现已成为世界上最大的服务器系统。系统创建之初，代码
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-21
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Leroy
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Git/">
-                        <span class="chip bg-color">Git</span>
-                    </a>
-                    
-                    <a href="/tags/GitHub/">
-                        <span class="chip bg-color">GitHub</span>
                     </a>
                     
                 </div>
