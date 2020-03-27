@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Leroy">
-    <meta name="description" content="Leroy">
+    <meta name="keywords" content="标签: Vue, Leroy">
+    <meta name="description" content="标签: Vue | Leroy">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Leroy</title>
+    <title>标签: Vue | Leroy</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -305,56 +305,9 @@
 
 </header>
 
-    
-<style>
-    .carousel-control {
-        width: 45px;
-        height: 45px;
-        line-height: 55px;
-        border-radius: 45px;
-        background: transparent;
-        cursor: pointer;
-        z-index: 100;
-    }
-
-    #prev-cover {
-        position: absolute;
-        top: 48%;
-        left: 8px;
-    }
-
-    #next-cover {
-        position: absolute;
-        top: 48%;
-        right: 8px;;
-    }
-
-    #prev-cover i {
-        margin-right: 3px;
-    }
-
-    #next-cover i {
-        margin-left: 3px;
-    }
-
-    .carousel-control:hover {
-        background-color:rgba(0, 0, 0, .4);
-    }
-
-    .carousel-control i {
-        color: #fff;
-        font-size: 2.4rem;
-    }
-</style>
-
-
-
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-
-    <div class="carousel-item red white-text bg-cover about-cover">
-        <div class="container">
-            <div class="row">
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
             <div class="title center-align">
@@ -390,143 +343,99 @@
 </script>
 
 
-
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light btn">
-                    <i class="fa fa-angle-double-down"></i>开始阅读
-                </a>
-
-                
-            </div>
-            <div class="cover-social-link">
-    <a href="https://github.com/easydeleroy" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:leroy_it@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=651350292" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 651350292" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-
-
-</div>
-        </div>
     </div>
-
-    
 </div>
-
-<script>
-    $(function () {
-        let coverSlider = $('.carousel');
-        coverSlider.carousel({
-            duration: Number('120'),
-            fullWidth: true,
-            indicators: 'true' === 'true'
-        });
-
-        let carouselIntervalId;
-        
-        // Loop to call the next cover article picture.
-        let autoCarousel = function() {
-            carouselIntervalId = setInterval(function () {
-                coverSlider.carousel('next');
-            }, 5000);
-        };
-        autoCarousel();
-        
-
-        let restartPlay = function () {
-            
-            clearInterval(carouselIntervalId);
-            autoCarousel();
-            
-        };
-
-        
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
-        });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
-        });
-        
-    });
-</script>
-
-
 
 <main class="content">
 
     
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    
-                        <div class="dream">
-    
-    <div class="title center-align">
-        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;我的梦想
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐
-        </div>
-    </div>
-</div>
-                    
 
-                    
-
-                    
-
-                    
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-                    </div>
-                    
-                </div>
+<div id="tags" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
+            </div>
+            <div class="tag-chips">
+                
+                
+                <a href="/tags/%E5%89%8D%E7%AB%AF/" title="前端: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="前端" style="background-color: #F9EBEA;">前端
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Vue/" title="Vue: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="Vue" style="background-color: #F5EEF8;">Vue
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Markdown/" title="Markdown: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Markdown" style="background-color: #D5F5E3;">Markdown
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Git/" title="Git: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Git" style="background-color: #E8F8F5;">Git
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/GitHub/" title="GitHub: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="GitHub" style="background-color: #FEF9E7;">GitHub
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Linux/" title="Linux: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Linux" style="background-color: #F8F9F9;">Linux
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Vim/" title="Vim: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Vim" style="background-color: #82E0AA;">Vim
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
             </div>
         </div>
     </div>
-    
+</div>
 
     
 
-    
-
-    <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
-        <div class="row article-row">
+        <div class="row tags-posts">
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="前端, Vue" data-aos="fade-up">
                 <div class="card">
                     <a href="/posts/cdf1.html">
-                        <div class="card-image">
+                        <div class="card-image tag-image">
                             
                             
                             <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Vue全家桶(一)-前后端交互">
@@ -534,24 +443,7 @@
                             <span class="card-title">Vue全家桶(一)-前后端交互</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                前后端交互模式接口调用方式
-原生ajax
-基于jQuery的ajax
-fetch
-axios
-
-Promise 用法异步调用
-定时任务
-Ajax
-事件函数
-
-概述​    多个异步任务存在依赖关系要使用嵌套的形式来解决，但是多层回调，向一个
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2020-03-27
@@ -561,34 +453,21 @@ Ajax
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
                                 <a href="/categories/Vue/" class="post-category">
-                                    Vue
+                                Vue
                                 </a>
                                 
                                 
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                            <span class="chip bg-color">前端</span>
-                        </a>
-                        
-                        <a href="/tags/Vue/">
-                            <span class="chip bg-color">Vue</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="前端, Vue" data-aos="fade-up">
                 <div class="card">
                     <a href="/posts/e8d9.html">
-                        <div class="card-image">
+                        <div class="card-image tag-image">
                             
                             
                             <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Vue全家桶(一)-组件化开发">
@@ -596,22 +475,7 @@ Ajax
                             <span class="card-title">Vue全家桶(一)-组件化开发</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                组件化开发思想组件注册全局组件语法
-注册
-Vue.component(组件名称, {
-    data: 组件数据,
-    template: 组件模板内容
-})
-
-使用
-&lt;div id="app">
-    &lt;button-
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2020-03-26
@@ -621,34 +485,21 @@ Vue.component(组件名称, {
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
                                 <a href="/categories/Vue/" class="post-category">
-                                    Vue
+                                Vue
                                 </a>
                                 
                                 
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                            <span class="chip bg-color">前端</span>
-                        </a>
-                        
-                        <a href="/tags/Vue/">
-                            <span class="chip bg-color">Vue</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="前端, Vue" data-aos="fade-up">
                 <div class="card">
                     <a href="/posts/d1d9.html">
-                        <div class="card-image">
+                        <div class="card-image tag-image">
                             
                             
                             <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Vue全家桶(一)-Vue基础">
@@ -656,25 +507,7 @@ Vue.component(组件名称, {
                             <span class="card-title">Vue全家桶(一)-Vue基础</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                MVVM设计思想
-基本使用从”Hello W orld”开始
-需要提供标签用于填充数据
-引入vue.js库文件
-可以使用vue的语法做功能
-把vue提供的数据填充到标签里面
-
-
-
-
-    
-        {{msg}}  
-      
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2020-03-25
@@ -684,231 +517,19 @@ Vue.component(组件名称, {
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
                                 <a href="/categories/Vue/" class="post-category">
-                                    Vue
+                                Vue
                                 </a>
                                 
                                 
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                            <span class="chip bg-color">前端</span>
-                        </a>
-                        
-                        <a href="/tags/Vue/">
-                            <span class="chip bg-color">Vue</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/posts/87fe.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="linux基础入门（二）-vim基础入门">
-                            
-                            <span class="card-title">linux基础入门（二）-vim基础入门</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Vim模式普通模式​    在普通模式中，用的编辑器命令，比如移动光标，删除文本等等。这也是Vim启动后的默认模式。
-插入模式​    在这个模式中，大多数按键都会向文本缓冲中插入文本。在普通模式下按i进入，esc退出。
-可视模式​    
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-24
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Linux/" class="post-category">
-                                    Linux
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Linux/">
-                            <span class="chip bg-color">Linux</span>
-                        </a>
-                        
-                        <a href="/tags/Vim/">
-                            <span class="chip bg-color">Vim</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/posts/386.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="linux基础入门（一）-常用命令">
-                            
-                            <span class="card-title">linux基础入门（一）-常用命令</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                常用快捷键
-
-
-按键
-作用
-
-
-
-Tab
-自动补全
-
-
-Ctrl + c
-终止程序
-
-
-Ctrl + d
-键盘输入结束或退出终端
-
-
-Ctrl + s
-暂停当前程序，暂停后按任意键恢复运行
-
-
-Ctrl + z
-将当前程序放到后台运行，回复
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-23
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Linux/" class="post-category">
-                                    Linux
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Linux/">
-                            <span class="chip bg-color">Linux</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/posts/2879.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Markdown入门指南">
-                            
-                            <span class="card-title">Markdown入门指南</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                前沿Markdown是一种轻量级的标记语言，非常的简单，常用的符号不超过十个。
-Markdown语法标题​    # 一级标题
-​    ## 二级标题
-​    ### 三级标题
-​    总共有六个标题
-列表​    列表分为有序列表和
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-21
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Leroy
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Markdown/">
-                            <span class="chip bg-color">Markdown</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
             
         </div>
     </article>
-
 </main>
-
-
-<div class="container paging">
-    <div class="row">
-        <div class="col s6 m4 l4">
-            
-            <a class="left btn-floating btn-large disabled">
-                <i class="fas fa-angle-left"></i>
-            </a>
-            
-        </div>
-        <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">1 / 2</div>
-        </div>
-        <div class="col s6 m4 l4">
-            
-            <a href="/page/2/"
-               class="right btn-floating btn-large waves-effect waves-light bg-color">
-                <i class="fas fa-angle-right"></i>
-            </a>
-            
-        </div>
-    </div>
-</div>
 
 
 
