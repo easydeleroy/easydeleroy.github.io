@@ -477,7 +477,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5k
+                    5.4k
                 </div>
                 
 
@@ -1087,6 +1087,15 @@
     }
 })</code></pre>
 </li>
+<li><p>自定义指令的钩子函数</p>
+<ul>
+<li>bind ： 只调用一次，指令第一次绑定到元素 时调用，用这个钩子函数可以定义一个在绑定时执行一次的初始化动作。</li>
+<li>inserted ： 被绑定元素插入父节点时调用（父节点存在即可调用，不必存在于 document 中） ．  </li>
+<li>update ： 被绑定元素所在的模板更新时调用，而不论绑定值是否变化。通过比较更新前后的绑定值，可以忽略不必要的模板更新。  </li>
+<li>componentUpdated ： 被绑定元素所在模板完成一次更新周期时调用．  </li>
+<li>unbind ： 只调用一次，指令与元素解绑时调 用 。  </li>
+</ul>
+</li>
 <li><p>带参数的自定义指令</p>
 <pre class=" language-html"><code class="language-html">Vue.directive('color', {
     inserted: function(el, binding) {
@@ -1096,6 +1105,22 @@
 
 //使用
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">v-color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>{color:<span class="token punctuation">"</span>orange <span class="token punctuation">"</span>}<span class="token punctuation">'</span></span><span class="token punctuation">></span></span></code></pre>
+</li>
+<li><p>钩子函数的参数</p>
+<ul>
+<li>el 指令所绑定的元素，可以直接操作DOM</li>
+<li>binding 一个对象，包含以下属性<ul>
+<li>name 指令名。不包含前缀v-</li>
+<li>value 指令的绑定值，比如v-directive=”1+1” value的值为2</li>
+<li>oldValue 指令绑定的前一个值，仅在update和componentUpdated钩子中可用</li>
+<li>expression 绑定值的字符串形式</li>
+<li>arg 传给指令的参数</li>
+<li>modifiers 一个包含修饰符的对象</li>
+</ul>
+</li>
+<li>vnode Vue编辑器生成的虚拟节点</li>
+<li>oldVnode 上一个虚拟节点仅在update和componentUpdated钩子可用</li>
+</ul>
 </li>
 <li><p>用例</p>
 <pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
@@ -1391,6 +1416,33 @@ var flag = this.books.some(function(item){
 <h3 id="修改响应式数据"><a href="#修改响应式数据" class="headerlink" title="修改响应式数据"></a>修改响应式数据</h3><p>使用索引的方式修改数组的数据不是响应式的，应该使用<code>Vue.set</code>方法</p>
 <p><code>Vue.set(vm.item,indexOfItem,newValue)</code><br>参数一: 表示要处理的数组名称<br>参数二:表示要处理的数组索引<br>参数三:表示要处理的数组的值</p>
 <p>或<code>vm.set(vm.item,indexOfItem,newValue)</code></p>
+<h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p>Vue.js提供了插件机制，可以在全局上添加一些功能。</p>
+<h4 id="注册插件"><a href="#注册插件" class="headerlink" title="注册插件"></a>注册插件</h4><p>注册插件需要一个公开的方法install，第一个参数是Vue构造器，第二个参数是一个可选的选项对象</p>
+<pre class=" language-js"><code class="language-js">MyPlugin<span class="token punctuation">.</span>install <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>Vue<span class="token punctuation">,</span>options<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 全局注册组件(指令等功能资源类似)</span>
+    Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'component-name'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 组件内容</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">//添加实例方法</span>
+    VUe<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>$Notice <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//逻辑代码。。。</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// 添加全局方法或属性</span>
+    Vue<span class="token punctuation">.</span>globalMethod <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//逻辑</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//添加全局混合</span>
+    Vue<span class="token punctuation">.</span><span class="token function">mixin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        mounted<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="使用插件"><a href="#使用插件" class="headerlink" title="使用插件"></a>使用插件</h4><pre class=" language-js"><code class="language-js">Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>MyPlugin<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">//或者</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Myplugin<span class="token punctuation">,</span><span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 <h2 id="案例-1"><a href="#案例-1" class="headerlink" title="案例"></a>案例</h2><p>图书列表</p>
 <pre class=" language-html"><code class="language-html">
 <span class="token doctype">&lt;!DOCTYPE html></span>
@@ -1778,16 +1830,16 @@ var flag = this.books.some(function(item){
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            组件化开发思想组件注册全局组件语法
+                            组件化开发思想组件注册全局组件语法全局组件注册后，任何的vue实例都可以使用。
+
 注册
 Vue.component(组件名称, {
-    data: 组件数据,
+    datazhu: 组件数据,
     template: 组件模板内容
 })
 
 使用
-&lt;div id="app">
-    &lt;button-
+&lt;div
                         
                     </div>
                     <div class="publish-info">
@@ -2019,7 +2071,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">21.4k</span>&nbsp;字
+                class="white-color">29.8k</span>&nbsp;字
             
             
             
