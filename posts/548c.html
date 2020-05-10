@@ -4,33 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="linux基础入门（一）-常用命令, Leroy">
-    <meta name="description" content="常用快捷键
-
-
-按键
-作用
-
-
-
-Tab
-自动补全
-
-
-Ctrl + c
-终止程序
-
-
-Ctrl + d
-键盘输入结束或退出终端
-
-
-Ctrl + s
-暂停当前程序，暂停后按任意键恢复运行
-
-
-Ctrl + z
-将当前程序放到后台运行，回复">
+    <meta name="keywords" content="Tkinter笔记, Leroy">
+    <meta name="description" content="Tkinter 简介Tkinter 是使用 python 进行窗口视窗设计的模块。Tkinter模块(“Tk 接口”)是Python的标准Tk GUI工具包的接口。作为 python 特定的GUI界面，是一个图像的窗口，tkinter是py">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -38,7 +13,7 @@ Ctrl + z
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>linux基础入门（一）-常用命令 | Leroy</title>
+    <title>Tkinter笔记 | Leroy</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -334,12 +309,12 @@ Ctrl + z
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">linux基础入门（一）-常用命令</h1>
+                    <h1 class="description center-align post-title">Tkinter笔记</h1>
                 </div>
             </div>
         </div>
@@ -456,23 +431,18 @@ Ctrl + z
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Linux/">
-                                <span class="chip bg-color">Linux</span>
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
+                            </a>
+                        
+                            <a href="/tags/GUI/">
+                                <span class="chip bg-color">GUI</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/Linux/" class="post-category">
-                                Linux
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -481,7 +451,7 @@ Ctrl + z
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-23
+                    2020-05-09
                 </div>
                 
 
@@ -490,7 +460,7 @@ Ctrl + z
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    130
                 </div>
                 
 
@@ -503,338 +473,11 @@ Ctrl + z
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><table>
-<thead>
-<tr>
-<th align="center">按键</th>
-<th align="center">作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">Tab</td>
-<td align="center">自动补全</td>
-</tr>
-<tr>
-<td align="center">Ctrl + c</td>
-<td align="center">终止程序</td>
-</tr>
-<tr>
-<td align="center">Ctrl + d</td>
-<td align="center">键盘输入结束或退出终端</td>
-</tr>
-<tr>
-<td align="center">Ctrl + s</td>
-<td align="center">暂停当前程序，暂停后按任意键恢复运行</td>
-</tr>
-<tr>
-<td align="center">Ctrl + z</td>
-<td align="center">将当前程序放到后台运行，回复到前台为命令fg</td>
-</tr>
-<tr>
-<td align="center">Ctrl + a</td>
-<td align="center">将光标移至输入行头</td>
-</tr>
-<tr>
-<td align="center">Ctrl + e</td>
-<td align="center">将光标移至输入行末</td>
-</tr>
-<tr>
-<td align="center">Ctrl + k</td>
-<td align="center">删除从光标所在位置到行末</td>
-</tr>
-<tr>
-<td align="center">Alt + Backspace</td>
-<td align="center">向前删除一个单词</td>
-</tr>
-<tr>
-<td align="center">Shift + PgUp</td>
-<td align="center">将终端显示向上滚动</td>
-</tr>
-<tr>
-<td align="center">Shift + PgDn</td>
-<td align="center">将终端显示向下滚动</td>
-</tr>
-</tbody></table>
-<h2 id="常用通配符"><a href="#常用通配符" class="headerlink" title="常用通配符"></a>常用通配符</h2><table>
-<thead>
-<tr>
-<th align="center">字符</th>
-<th align="center">含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">*</td>
-<td align="center">匹配0或多个字符</td>
-</tr>
-<tr>
-<td align="center">?</td>
-<td align="center">匹配任意一个字符</td>
-</tr>
-<tr>
-<td align="center">[list]</td>
-<td align="center">匹配list中的任意单一字符</td>
-</tr>
-<tr>
-<td align="center">[^list]</td>
-<td align="center">匹配除list中的任意单一字符以外的字符</td>
-</tr>
-<tr>
-<td align="center">[c1-c2]</td>
-<td align="center">匹配c1-c2中的任意单一字符:如[0-9]</td>
-</tr>
-<tr>
-<td align="center">{string,string2}</td>
-<td align="center">匹配string1或string2其一字符串</td>
-</tr>
-<tr>
-<td align="center">{c1..c2}</td>
-<td align="center">匹配c1-c2中全部字符,如{1..10}</td>
-</tr>
-</tbody></table>
-<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><h3 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h3><p><code>sudo adduser demo</code></p>
-<h3 id="切换登录用户"><a href="#切换登录用户" class="headerlink" title="切换登录用户"></a>切换登录用户</h3><p><code>su -l demo</code></p>
-<h3 id="查看当前用户"><a href="#查看当前用户" class="headerlink" title="查看当前用户"></a>查看当前用户</h3><p><code>whoami</code></p>
-<h3 id="退出当前用户"><a href="#退出当前用户" class="headerlink" title="退出当前用户"></a>退出当前用户</h3><p><code>exit</code></p>
-<h3 id="查看当前用户所在的用户组"><a href="#查看当前用户所在的用户组" class="headerlink" title="查看当前用户所在的用户组"></a>查看当前用户所在的用户组</h3><p><code>groups demo</code><br>如果在创建用户的时候不指定用户组，系统会自动创建一个与用户同名的用户组</p>
-<h3 id="将其他用户加入sudo用户组"><a href="#将其他用户加入sudo用户组" class="headerlink" title="将其他用户加入sudo用户组"></a>将其他用户加入sudo用户组</h3><p><code>sudo usermod -G sudo demo</code></p>
-<h3 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h3><p><code>sudo deluser demo--remove-home</code>  其中的<code>--remove-home</code> 是在删除用户是将该用户的工作目录一并删除。</p>
-<h3 id="删除用户组"><a href="#删除用户组" class="headerlink" title="删除用户组"></a>删除用户组</h3><p><code>groupdel</code></p>
-<h2 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h2><h3 id="查看文件"><a href="#查看文件" class="headerlink" title="查看文件"></a>查看文件</h3><p>​    <code>ls -l</code> 显示文件详细内容 <code>文件类型和权限 + 链接数 + 所有者 + 文件大小 + 最后修改时间 + 文件名</code></p>
-<ul>
-<li><p>文件类型</p>
-<p>d: 目录、l: 软链接、b: 块设备、c: 字符设备、s: socket、p: 管道</p>
-</li>
-</ul>
-<ul>
-<li><p>文件权限<br>r: 允许读、w: 允许写、x: 允许执行 其中有三组分别为这个文件拥有者、所属用户组、其他用户具有的权限</p>
-</li>
-<li><p>链接数<br>链接到该文件所在的inode结点的文件名的数目</p>
-</li>
-</ul>
-<h3 id="变更文件所有者"><a href="#变更文件所有者" class="headerlink" title="变更文件所有者"></a>变更文件所有者</h3><p><code>sudo chown 用户名 文件名</code></p>
-<h3 id="修改文件权限"><a href="#修改文件权限" class="headerlink" title="修改文件权限"></a>修改文件权限</h3><p>用两种形式</p>
-<ul>
-<li>二进制形式<br>文件的读写执行对应的字母为rwx, 以二进制表示就是111，对应十进制就是7，三组就是777，所以修改权限的时候可以采用<code>chmod 600 文件名</code></li>
-<li>加减赋值操作<br>g、o、u分别表示group、others、user，+、-分别表示增加和去掉相应的权限<br><code>chmod go-rw 文件名</code></li>
-</ul>
-<h2 id="目录结构及文件基本操作"><a href="#目录结构及文件基本操作" class="headerlink" title="目录结构及文件基本操作"></a>目录结构及文件基本操作</h2><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>​    Linux 是以树形目录结构的形式来构建整个系统的</p>
-<p>​    </p>
-<table>
-<thead>
-<tr>
-<th align="center">目录</th>
-<th align="center">作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">bin</td>
-<td align="center">一般用户可用，启动时会用到的命令，即在文件系统没有被挂载时，也能够使用的命令</td>
-</tr>
-<tr>
-<td align="center">boot</td>
-<td align="center">grub(开机设置相关文件)内核文件(vmlinuz)</td>
-</tr>
-<tr>
-<td align="center">dev</td>
-<td align="center">设备文件</td>
-</tr>
-<tr>
-<td align="center">etc</td>
-<td align="center">rc.d(用于存放不能运行等级的启动脚本的链接文件)</td>
-</tr>
-<tr>
-<td align="center">home</td>
-<td align="center">用户家目录</td>
-</tr>
-<tr>
-<td align="center">lib</td>
-<td align="center">用于存放程序的动态库和模块文件</td>
-</tr>
-<tr>
-<td align="center">media</td>
-<td align="center">用于挂在本地磁盘或其他存储设备</td>
-</tr>
-<tr>
-<td align="center">mnt</td>
-<td align="center">用于挂在其他临时文件系统</td>
-</tr>
-<tr>
-<td align="center">opt</td>
-<td align="center">发行版附加的一些软件包</td>
-</tr>
-<tr>
-<td align="center">root</td>
-<td align="center">root用户家</td>
-</tr>
-<tr>
-<td align="center">sbin</td>
-<td align="center">这里面很多只能是root用户才能执行的命令，一些系统进行更新，备份，还原和开关机用到命令</td>
-</tr>
-<tr>
-<td align="center">srv</td>
-<td align="center">存放服务进程所需的数据文件和一些服务的执行脚本</td>
-</tr>
-<tr>
-<td align="center">tmp</td>
-<td align="center">存放各种临时文件</td>
-</tr>
-<tr>
-<td align="center">usr</td>
-<td align="center">bin(非必要可执行文件；面向所有的用户)<br>include(标准包含头文件)<br>lib(/usr/bin/和/usr/sbin/中二进制文件内容)<br>local(本地数据)<br>share(体系结构无关的共享数据)<br>sbin(非必要的系统二进制文件)<br>src(源代码)</td>
-</tr>
-<tr>
-<td align="center">var</td>
-<td align="center">变量文件-在正常运行的系统中其内容不断变化的文件，如日志，脱机文件和临时电子邮件文件。</td>
-</tr>
-</tbody></table>
-<p>将目录化为为四种交互作用的形态</p>
-<table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center">可分享的</th>
-<th align="center">不可分享的</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">不可变的</td>
-<td align="center">/usr(软件放置处)<br>/opt(第三方软件)</td>
-<td align="center">/etc(配置文件)<br>/boot(开机及内核文件)</td>
-</tr>
-<tr>
-<td align="center">可变动的</td>
-<td align="center">/var/mail(用户邮件信箱)<br>/var/news(新闻组)</td>
-<td align="center">/var/run(程序相关)<br>/var/lock(文件锁相关)</td>
-</tr>
-</tbody></table>
-<h3 id="目录路径"><a href="#目录路径" class="headerlink" title="目录路径"></a>目录路径</h3><table>
-<thead>
-<tr>
-<th align="center">..</th>
-<th align="center">表示上一级目录</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">.</td>
-<td align="center">表示当前目录</td>
-</tr>
-<tr>
-<td align="center">-</td>
-<td align="center">表示上一次所在目录</td>
-</tr>
-<tr>
-<td align="center">~</td>
-<td align="center">表示当前用户的home目录</td>
-</tr>
-</tbody></table>
-<h3 id="文件基本操作"><a href="#文件基本操作" class="headerlink" title="文件基本操作"></a>文件基本操作</h3><ul>
-<li><p>新建空白文件<br><code>touch 文件名</code></p>
-</li>
-<li><p>新建目录<br><code>mkdir 目录名</code> 加上<code>-p</code>参数可以创建一个多级目录</p>
-</li>
-<li><p>复制文件<br><code>cp 要复制的文件 复制到的目录</code></p>
-</li>
-<li><p>复制目录<br><code>cp -r 要复制的目录 复制到的目录</code></p>
-</li>
-<li><p>删除文件<br><code>rm 文件名</code> <code>-f</code>可删除只读文件 </p>
-</li>
-<li><p>删除目录<br><code>rm -r 目录名</code> </p>
-</li>
-<li><p>移动文件<br><code>mv 源目录文件 目的目录</code> </p>
-</li>
-<li><p>重命令文件<br><code>mv 旧文件名 新的文件名</code></p>
-</li>
-<li><p>批量重命令<br>需要先安装 <code>sudo apt install rename</code></p>
-<p><code>rename 正则表达式</code></p>
-</li>
-<li><p>查看文件<br><code>cat 文件名</code> 将文件内容打印到终端 加上 <code>-n</code> 显示行数<br><code>tac 文件名</code> 倒序显示内容<br><code>nl 文件名</code> 添加行数并打印<br><code>head 文件名</code> 查看文件前十行 <code>-n 行数</code> 查看规定行数<br><code>tail 文件名</code> 查看文件最后十行 <code>-n 行数</code> 查看规定行数 <code>-f</code> 不断读取文件最后几行的内容</p>
-</li>
-<li><p>查看文件类型<br><code>file 文件名</code></p>
-</li>
-</ul>
-<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
-<li>创建<br><code>declare tmp</code> 使用等号赋值(注意等号两边不能有空格)</li>
-<li>读取<br><code>echo $tmp</code> $表示引用一个变量的值</li>
-</ul>
-<h3 id="环境变量-1"><a href="#环境变量-1" class="headerlink" title="环境变量"></a>环境变量</h3><p>​    环境变量是在操作系统中一个具有特定名字的对象，它包含了一个或多个应用程序将使用到的信息。Linux是一个多用户的操作系统，每个用户登录系统时都会有一个专用的运行环境，通常情况下每个用户的默认的环境都是相同的。这个默认环境就是一组环境变量的定义。每个用户都可以通过修改环境变量的方式对自己的运行环境进行配置。</p>
-<table>
-<thead>
-<tr>
-<th align="center">命令</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">set</td>
-<td align="center">显示当前Shell所有的变量，包括内建环境变量、用户自定义变量、导出的环境变量</td>
-</tr>
-<tr>
-<td align="center">env</td>
-<td align="center">显示与当前用户相关的环境变量，还可以让命令在指定环境中运行</td>
-</tr>
-<tr>
-<td align="center">export</td>
-<td align="center">显示从Shell中导出成环境变量的变量，也能通过它将自定义变量导出为环境变量</td>
-</tr>
-</tbody></table>
-<p>​    当关闭或者关闭当前shell之后，环境变量就会丢失。这时可以设置环境变量为永久生效。</p>
-<p>​    <code>/etc/bashrc</code>存放shell变量；<code>/etc/profile</code>存放环境变量(对所有用户生效)；每个用户目录下有一个<code>.profile</code>文件(只对当前用户永久生效)</p>
-<h2 id="搜索文件"><a href="#搜索文件" class="headerlink" title="搜索文件"></a>搜索文件</h2><h3 id="whereis"><a href="#whereis" class="headerlink" title="whereis"></a>whereis</h3><p>​    只能搜索二进制文件，帮助文件、源代码文件</p>
-<h3 id="locate"><a href="#locate" class="headerlink" title="locate"></a>locate</h3><p>​    需要先安装 <code>apt install locate</code> 再执行<code>updatedb</code>  <code>-c</code>只统计数目 <code>-i</code> 忽略大小写查找</p>
-<h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><p>​    find &lt;指定目录&gt; &lt;指定条件&gt; &lt;指定动作&gt;</p>
-<h2 id="文件打包及解压缩"><a href="#文件打包及解压缩" class="headerlink" title="文件打包及解压缩"></a>文件打包及解压缩</h2><table>
-<thead>
-<tr>
-<th align="center">文件后缀名</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>*.zip</code></td>
-<td align="center">zip 程序打包压缩的文件</td>
-</tr>
-<tr>
-<td align="center"><code>*.rar</code></td>
-<td align="center">rar 程序压缩的文件</td>
-</tr>
-<tr>
-<td align="center"><code>*.7z</code></td>
-<td align="center">7zip 程序压缩的文件</td>
-</tr>
-<tr>
-<td align="center"><code>*.tar</code></td>
-<td align="center">tar 程序打包，未压缩的文件</td>
-</tr>
-<tr>
-<td align="center"><code>*.gz</code></td>
-<td align="center">gzip 程序（GNU zip）压缩的文件</td>
-</tr>
-<tr>
-<td align="center"><code>*.xz</code></td>
-<td align="center">xz 程序压缩的文件</td>
-</tr>
-<tr>
-<td align="center"><code>*.bz2</code></td>
-<td align="center">bzip2 程序压缩的文件</td>
-</tr>
-<tr>
-<td align="center"><code>*.tar.gz</code></td>
-<td align="center">tar 打包，gzip 程序压缩的文件</td>
-</tr>
-<tr>
-<td align="center"><code>*.tar.xz</code></td>
-<td align="center">tar 打包，xz 程序压缩的文件</td>
-</tr>
-<tr>
-<td align="center"><code>*tar.bz2</code></td>
-<td align="center">tar 打包，bzip2 程序压缩的文件</td>
-</tr>
-<tr>
-<td align="center"><code>*.tar.7z</code></td>
-<td align="center">tar 打包，7z 程序压缩的文件</td>
-</tr>
-</tbody></table>
-<h3 id="tar打包工具"><a href="#tar打包工具" class="headerlink" title="tar打包工具"></a>tar打包工具</h3><p><code>tar -zxvf</code></p>
+                <h2 id="Tkinter-简介"><a href="#Tkinter-简介" class="headerlink" title="Tkinter 简介"></a>Tkinter 简介</h2><p>Tkinter 是使用 python 进行窗口视窗设计的模块。Tkinter模块(“Tk 接口”)是Python的标准Tk GUI工具包的接口。作为 python 特定的GUI界面，是一个图像的窗口，tkinter是python 自带的，可以编辑的GUI界面。</p>
+<h2 id="Tkinter-控件"><a href="#Tkinter-控件" class="headerlink" title="Tkinter 控件"></a>Tkinter 控件</h2><p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://gitee.com//easyleroy/blogimage/raw/master/img/20200509174625.png" alt=""></p>
+<h2 id="动手实践"><a href="#动手实践" class="headerlink" title="动手实践"></a>动手实践</h2><blockquote>
+<p>查看源码</p>
+</blockquote>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -878,7 +521,7 @@ Ctrl + z
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="easydeleroy.github.io/posts/386.html">easydeleroy.github.io/posts/386.html</a>
+                    <a href="easydeleroy.github.io/posts/548c.html">easydeleroy.github.io/posts/548c.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -916,8 +559,12 @@ Ctrl + z
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Linux/">
-                                    <span class="chip bg-color">Linux</span>
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
+                                </a>
+                            
+                                <a href="/tags/GUI/">
+                                    <span class="chip bg-color">GUI</span>
                                 </a>
                             
                         </div>
@@ -958,52 +605,48 @@ Ctrl + z
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/87fe.html">
+                <a href="/posts/548c.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="linux基础入门（二）-vim基础入门">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Tkinter笔记">
                         
-                        <span class="card-title">linux基础入门（二）-vim基础入门</span>
+                        <span class="card-title">Tkinter笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Vim模式普通模式​    在普通模式中，用的编辑器命令，比如移动光标，删除文本等等。这也是Vim启动后的默认模式。
-插入模式​    在这个模式中，大多数按键都会向文本缓冲中插入文本。在普通模式下按i进入，esc退出。
-可视模式​    
+                            Tkinter 简介Tkinter 是使用 python 进行窗口视窗设计的模块。Tkinter模块(“Tk 接口”)是Python的标准Tk GUI工具包的接口。作为 python 特定的GUI界面，是一个图像的窗口，tkinter是py
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-09
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Linux/" class="post-category">
-                                    Linux
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Leroy
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
-                    <a href="/tags/Vim/">
-                        <span class="chip bg-color">Vim</span>
+                    <a href="/tags/GUI/">
+                        <span class="chip bg-color">GUI</span>
                     </a>
                     
                 </div>
@@ -1017,29 +660,38 @@ Ctrl + z
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/2879.html">
+                <a href="/posts/94c2.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Markdown入门指南">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Python基础笔记">
                         
-                        <span class="card-title">Markdown入门指南</span>
+                        <span class="card-title">Python基础笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前沿Markdown是一种轻量级的标记语言，非常的简单，常用的符号不超过十个。
-Markdown语法标题​    # 一级标题
-​    ## 二级标题
-​    ### 三级标题
-​    总共有六个标题
-列表​    列表分为有序列表和
+                            基本数据类型Number整数 (int)
+浮点数 (float)
+进制
+
+二进制 用0b开头
+八进制 用0o开头
+十六进制 用ox开头
+十进制
+
+进制转换
+
+转换二进制 bin()
+转换八进制 oct()
+转换十进制 int()
+转换十六进
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-25
                             </span>
                         <span class="publish-author">
                             
@@ -1048,14 +700,6 @@ Markdown语法标题​    # 一级标题
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
-                    </a>
-                    
                 </div>
                 
             </div>

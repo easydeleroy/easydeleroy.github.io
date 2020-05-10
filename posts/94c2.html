@@ -1,0 +1,2250 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Python基础笔记, Leroy">
+    <meta name="description" content="基本数据类型Number整数 (int)
+浮点数 (float)
+进制
+
+二进制 用0b开头
+八进制 用0o开头
+十六进制 用ox开头
+十进制
+
+进制转换
+
+转换二进制 bin()
+转换八进制 oct()
+转换十进制 int()
+转换十六进">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Python基础笔记 | Leroy</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light" style="margin-bottom:12px">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Leroy</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/box" class="waves-effect waves-light">
+      
+      <i class="fas fa-briefcase" style="zoom: 0.6;"></i>
+      
+      <span>百宝箱</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>媒体</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>电影</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>书单</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Leroy</div>
+        <div class="logo-desc">
+            
+            脑袋决定口袋，思路决定出路
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/box" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-briefcase"></i>
+			
+			百宝箱
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			媒体
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/movies " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>电影</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/books " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>书单</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Python基础笔记</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-04-25
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    8k
+                </div>
+                
+
+                
+				
+                
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><h3 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h3><p>整数 (int)</p>
+<p>浮点数 (float)</p>
+<p>进制</p>
+<ul>
+<li>二进制 用0b开头</li>
+<li>八进制 用0o开头</li>
+<li>十六进制 用ox开头</li>
+<li>十进制</li>
+</ul>
+<p>进制转换</p>
+<ul>
+<li>转换二进制 bin()</li>
+<li>转换八进制 oct()</li>
+<li>转换十进制 int()</li>
+<li>转换十六进制 hex()</li>
+</ul>
+<p>复数</p>
+<h3 id="Bool"><a href="#Bool" class="headerlink" title="Bool"></a>Bool</h3><ul>
+<li>真 (所有非零数)</li>
+<li>假 (零、空字符串、空数组、空元组、空字典、None)</li>
+</ul>
+<h3 id="Str"><a href="#Str" class="headerlink" title="Str"></a>Str</h3><p>用单引号、双引号、三引号来表示。</p>
+<p>转义字符</p>
+<p>原始字符串</p>
+<p>字符串运算 </p>
+<ul>
+<li><p>拼接 ( + )</p>
+</li>
+<li><p>重复 ( * )</p>
+</li>
+<li><p>选择 ( [:] )</p>
+</li>
+<li><p>大小写转换</p>
+<ol>
+<li>str.lower() 转换为小写</li>
+<li>str.upper() 转换为大写</li>
+<li>str.capitalize() 字符串首字母大写</li>
+<li>str.title() 每个单词首字母大写</li>
+<li>str.swapcase() 大小写互换</li>
+</ol>
+</li>
+<li><p>格式化字符串</p>
+<p><code>'{}.{2}.{1}'.format("I","you","love")</code></p>
+<p><code>"我叫{name},我今年{age}岁".format(name="zzz", age="20")</code></p>
+<p>format也可以格式化数字<code>format(123.456,'0.2f')</code> 小数保留2位</p>
+</li>
+<li><p>删除空白字符串</p>
+<ol>
+<li>str.lstrip() 删除左侧空白</li>
+<li>str.rstrip() 删除右侧空白</li>
+<li>str.strip() 删除两端空白</li>
+</ol>
+</li>
+<li><p>查找字符串</p>
+<p><code>str.find(目标串,start=0,end=len(str))</code> 返回子字符串出现的位置，如果没有找到，则返回-1</p>
+</li>
+<li><p>反向查找字符串</p>
+<p><code>str.rfind(str,start=0,end=len(str))</code> 从右边开始查找</p>
+</li>
+<li><p>字符串替换</p>
+<p><code>str.replace(原始串,目标串,[替换次数])</code> </p>
+</li>
+<li><p>统计字符串出现次数<br><code>str.count(目标串,start=0,end=len(str))</code> 返回目标串在str中出现的次数</p>
+</li>
+</ul>
+<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><ul>
+<li>创建 <ol>
+<li>[]</li>
+<li>list()</li>
+</ol>
+</li>
+<li>在末尾追加新元素 list.append()</li>
+<li>在指定索引插入新元素 list.insert(索引,新元素)</li>
+<li>更新指定索引元素 list[索引] = 新值</li>
+<li>删除指定元素 list.remove(元素)</li>
+<li>删除指定索引的元素 list.pop(索引)</li>
+<li>统计某元素出现的次数 list.count(元素)</li>
+<li>追加一个列表 list.extend(列表) 与append不同的是，append(列表),这时append是将列表作为一个元素</li>
+<li>判断元素是否在列表中  元素 in list</li>
+<li>复制列表 list.copy()</li>
+<li>清空列表 list.clear()</li>
+<li>反转列表 list.reverse()</li>
+<li>排序 list.sort(reverse=True) 默认升序排序,参数reverse=True后，降序排列</li>
+</ul>
+<h3 id="Dict"><a href="#Dict" class="headerlink" title="Dict"></a>Dict</h3><ul>
+<li>字典中的key不允许重复</li>
+<li>创建 <ol>
+<li>{}</li>
+<li>dict()</li>
+</ol>
+</li>
+<li>获取元素 dict.get(健,默认值)</li>
+<li>遍历 for key,value in dict.items()</li>
+<li>更新字典<ol>
+<li>直接使用dict[健] = 值</li>
+<li>dict.update(健=值, 健=值)</li>
+</ol>
+</li>
+<li>删除指定健的元素 dict.pop(‘健’)</li>
+<li>删除最后一个元素 dict.popitem() 并返回删除元素</li>
+<li>清空字典 dict.clear()</li>
+<li>为字典设置默认值，如果某个健已存在，则忽略，如果不存在，则设置为默认值 dict.setdefault(‘grade’, ‘c’)</li>
+<li>获取字典的视图<ol>
+<li>keys() 获取所有的健</li>
+<li>values() 获取所有的值</li>
+<li>items() 获取所有的键值对</li>
+</ol>
+</li>
+<li>格式化字符串<ol>
+<li><code>"姓名 %(name)s 年龄 %(age)s" % dict</code></li>
+<li><code>"姓名 {name} 年龄 {age}".format_map(dict)</code></li>
+</ol>
+</li>
+</ul>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h3><ul>
+<li><p>设置参数默认值</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span></code></pre>
+</li>
+<li><p>以形参形式传参</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">,</span> d<span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">:</span> 
+    <span class="token keyword">pass</span>
+func<span class="token punctuation">(</span>a<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> b<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> d<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span> e<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span></code></pre>
+</li>
+<li><p>混合形式传参</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">,</span> <span class="token operator">*</span><span class="token punctuation">,</span> d<span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment" spellcheck="true"># *后面所有的参数传参时必须使用关键字传参</span>
+    <span class="token keyword">pass</span></code></pre>
+<ul>
+<li><p>序列传参</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">:</span>
+   <span class="token keyword">pass</span>
+li <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+func<span class="token punctuation">(</span><span class="token operator">*</span>li<span class="token punctuation">)</span></code></pre>
+</li>
+</ul>
+</li>
+<li><p>字典传参</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+di <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'a'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token string">'b'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    <span class="token string">'c'</span><span class="token punctuation">:</span> <span class="token number">3</span>
+<span class="token punctuation">}</span>
+func<span class="token punctuation">(</span><span class="token operator">**</span>di<span class="token punctuation">)</span></code></pre>
+</li>
+</ul>
+<h2 id="模块与包"><a href="#模块与包" class="headerlink" title="模块与包"></a>模块与包</h2><h3 id="模块常用属性"><a href="#模块常用属性" class="headerlink" title="模块常用属性"></a>模块常用属性</h3><ul>
+<li>dir 列出对象的所有属性和方法</li>
+<li>help 查看类，方法的帮助信息</li>
+<li>__ name __ 模块的名称</li>
+<li>__ file __ 文件全路径</li>
+</ul>
+<h3 id="包"><a href="#包" class="headerlink" title="包"></a>包</h3><p>可以用来组织模块; 必须包含__ init __.py文件; 可以用来解决模块重名问题</p>
+<h2 id="计算生态"><a href="#计算生态" class="headerlink" title="计算生态"></a>计算生态</h2><h3 id="内置库"><a href="#内置库" class="headerlink" title="内置库"></a>内置库</h3><h4 id="time库"><a href="#time库" class="headerlink" title="time库"></a>time库</h4><p>一些概念</p>
+<ul>
+<li><p>计时起点<br>1970年1月1日0时0分0秒，可以用time.gmtime(0)获得</p>
+</li>
+<li><p>浮点数时间<br>一般从计时起点开始计算</p>
+</li>
+<li><p>struct_time时间<br>便于程序员使用的内部结构</p>
+<p><code>time.struct_time(tm_year=2020, tm_mon=1, tm_mday=25, tm_hour=3, tm_min=10, tm_sec=10, tm_wday=5)</code></p>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">属性名</th>
+<th align="center">取值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">tm_year</td>
+<td align="center">四位整数</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">tm_mon</td>
+<td align="center">[1,12]</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">tm_mday</td>
+<td align="center">[1,31]</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">tm_hour</td>
+<td align="center">[0,23]</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">tm_min</td>
+<td align="center">[0,59]</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">tm_sec</td>
+<td align="center">[0,61] 60仅用于调时</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">tm_wday</td>
+<td align="center">[0,6],星期一为0</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">tm_yday</td>
+<td align="center">[1,366]</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">tm_isdst</td>
+<td align="center">0:DST,1:非DST,-1:随系统</td>
+</tr>
+<tr>
+<td align="center">N/A</td>
+<td align="center">tm_zone</td>
+<td align="center">时区的缩写表示</td>
+</tr>
+<tr>
+<td align="center">N/A</td>
+<td align="center">tm_gmtoff</td>
+<td align="center">与UTC时间相差的秒数</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<ul>
+<li>字符串时间<br>便于人看</li>
+</ul>
+<p>时间获取库函数</p>
+<ul>
+<li>time()<br>返回一个从计时起点开始的表示时间的浮点数，返回一个时间戳</li>
+<li>gmtime()<br>返回一个struct_time表示的时间，如果是gmtime(s),s变成struct_time时间</li>
+<li>ctime()<br>返回一个字符串表示的时间，如果提供参数s，则把s变成字符串时间</li>
+<li>localtime()<br>返回一个struct_time表示的本地时间。localtime(s) 把s变成本地时间</li>
+<li>mktime()<br>将一个struct_time的本地时间t变成一个浮点数时间</li>
+<li>asctime()<br>返回一个字符串表示的时间，如果提供参数t，则把t变成字符串时间</li>
+</ul>
+<p>时间格式化</p>
+<ul>
+<li><p>strftime()<br>f 把struct_time时间转换成字符串时间<br>strftime(tpl,t) tpl是格式化模板字符串，定义输出效果，t是struct_time变量</p>
+<table>
+<thead>
+<tr>
+<th align="center">格式化</th>
+<th align="center">说明</th>
+<th align="center">范围和实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">%Y</td>
+<td align="center">年份</td>
+<td align="center">0000-9999</td>
+</tr>
+<tr>
+<td align="center">%m</td>
+<td align="center">月份</td>
+<td align="center">01-12</td>
+</tr>
+<tr>
+<td align="center">%d</td>
+<td align="center">日期</td>
+<td align="center">01-31</td>
+</tr>
+<tr>
+<td align="center">%A</td>
+<td align="center">星期</td>
+<td align="center">Monday-Sunday</td>
+</tr>
+<tr>
+<td align="center">%a</td>
+<td align="center">星期缩写</td>
+<td align="center">Mon-Sun</td>
+</tr>
+<tr>
+<td align="center">%H</td>
+<td align="center">小时 24h制</td>
+<td align="center">00-23</td>
+</tr>
+<tr>
+<td align="center">%I</td>
+<td align="center">小时 12h制</td>
+<td align="center">01-12</td>
+</tr>
+<tr>
+<td align="center">%p</td>
+<td align="center">上/下午</td>
+<td align="center">AM,PM</td>
+</tr>
+<tr>
+<td align="center">%M</td>
+<td align="center">分钟</td>
+<td align="center">00-59</td>
+</tr>
+<tr>
+<td align="center">%S</td>
+<td align="center">秒</td>
+<td align="center">00-59</td>
+</tr>
+<tr>
+<td align="center">%Z</td>
+<td align="center">时区</td>
+<td align="center">字符串</td>
+</tr>
+<tr>
+<td align="center">%%</td>
+<td align="center">%字符</td>
+<td align="center">%</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>strptime()<br>把字符串时间转换成struct_time时间<br>strptime(ts,tpl)</p>
+</li>
+</ul>
+<p>程序计时</p>
+<ul>
+<li><p>clock()</p>
+<p>计时时钟</p>
+</li>
+<li><p>monotonic()<br>单调计时时钟，不可更改，时间差有意义</p>
+</li>
+<li><p>perf_counter()<br>精确计时时钟，含起始和终止的所有时间</p>
+</li>
+<li><p>process_time()<br>进程计时时钟，不含进程sleep()时间</p>
+</li>
+<li><p>sleep() </p>
+</li>
+</ul>
+<p>辅助函数</p>
+<ul>
+<li>get_clock_info()<br>返回程序计时函数的属性值</li>
+</ul>
+<h4 id="random库"><a href="#random库" class="headerlink" title="random库"></a>random库</h4><p>基本随机函数</p>
+<ul>
+<li>seed()<br>初始给定的随机数种子，默认为当前系统时间</li>
+<li>random()<br>生成一个[0.0,1.0]之间的随机小数</li>
+<li>getstate()<br>返回随机数生成器内部状态，元组类型</li>
+<li>setstate()<br>设置随机数生成器内部状态</li>
+</ul>
+<p>扩展随机函数</p>
+<ul>
+<li>randint(a,b)<br>生成一个[a,b]之间的整数</li>
+<li>randrange(m,n[,k])<br>生成一个[m,n)之间以k为步长的随机整数</li>
+<li>getrandbits(k)<br>生成一个k比特长的随机整数</li>
+<li>choice(seq)<br>从序列seq中随机选择一个元素</li>
+<li>shuffle(seq)<br>将序列seq中元素随机排列，原序列被修改</li>
+<li>sample(pop, k)<br>从序列或集合pop中随机选择k个元素，原序列或集合不变</li>
+</ul>
+<h4 id="re库"><a href="#re库" class="headerlink" title="re库"></a>re库</h4><ul>
+<li><p>正则表达式语法</p>
+<table>
+<thead>
+<tr>
+<th align="center">操作符</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">.</td>
+<td align="center">表示任何单个字符</td>
+</tr>
+<tr>
+<td align="center">[]</td>
+<td align="center">字符集，对单个字符给出取值范围</td>
+</tr>
+<tr>
+<td align="center">[^]</td>
+<td align="center">非字符集，对单个字符给出排除范围</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">前一个字符0次或无限次出现</td>
+</tr>
+<tr>
+<td align="center">+</td>
+<td align="center">前一个字符1次或无限次出现</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">前一个字符0次或1次出现</td>
+</tr>
+<tr>
+<td align="center">|</td>
+<td align="center">左右表达式任意一个</td>
+</tr>
+<tr>
+<td align="center">{m}</td>
+<td align="center">扩展前一个字符m次</td>
+</tr>
+<tr>
+<td align="center">{m,n}</td>
+<td align="center">扩展前一个字符m至n次</td>
+</tr>
+<tr>
+<td align="center">^</td>
+<td align="center">匹配字符串开头</td>
+</tr>
+<tr>
+<td align="center">$</td>
+<td align="center">匹配字符串结尾</td>
+</tr>
+<tr>
+<td align="center">()</td>
+<td align="center">分组标记，内部只能使用|操作符</td>
+</tr>
+<tr>
+<td align="center">\d</td>
+<td align="center">数字</td>
+</tr>
+<tr>
+<td align="center">\w</td>
+<td align="center">单词字符</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>search(pattern, string, flags=0)</p>
+<p>在一个字符串中搜索匹配正则表达式的第一个位置，返回match对象</p>
+<p>匹配的字符串可以通过match.goup(0)来查看</p>
+<p>pattern 正则表达式的字符串胡原生字符串表示</p>
+<p>string 待匹配字符串</p>
+<p>flags 正则表达式使用时的控制标记</p>
+<pre><code>常用标记  re.I 忽略正则表达式的大小写 re.M 正则表达式中的^操作符能够将给定字符串的每行当作匹配的开始 re.S 正则表达式中的.操作符能够匹配所有字符 </code></pre></li>
+<li><p>match(pattern, string, flags=0)<br>在一个字符串的开始位置起的匹配正则表达式，返回match对象</p>
+</li>
+<li><p>findall(pattern, string, flags=0)</p>
+<p>搜索字符串，以列表类型返回全部能匹配的子串<br>pattern 正则表达式的字符串或原生字符串表示</p>
+<p>string 待匹配字符串</p>
+<p>flags 正则表达式使用时的控制标记 </p>
+</li>
+<li><p>split(pattern, stringm maxsplit=0, flags=0)</p>
+<p>将一个字符串按照正则表达式匹配结果进行分割，返回列表类型</p>
+<p>pattern 正则表达式的字符串或原生字符串表示</p>
+<p>string 待匹配字符串</p>
+<p>maxsplit 最大分割数，剩余部分作为最后一个输出</p>
+<p>flags 正则表达式使用时的控制标记</p>
+</li>
+<li><p>finditer(pattern, string, flags=0)</p>
+<p>搜索字符串，返回一个匹配结果的迭代类型，每个迭代元素是match对象</p>
+</li>
+<li><p>sub(pattern, repl, string, count=0, flags=0)</p>
+<p>在一个字符串中替换所有匹配正则表达式的子串，返回替换后的字符串</p>
+<p>repl 替换匹配字符串的字符串</p>
+<p>string  待匹配的字符串</p>
+<p>count 匹配的最大替换次数</p>
+<p>flags 正则表达式使用时的控制标记</p>
+</li>
+<li><p>compile(pattern)<br>将一个正则串编译成一个对象，可调用上述的所有方法 </p>
+</li>
+<li><p>match对象</p>
+<ul>
+<li>.string 待匹配的文本</li>
+<li>.re 匹配时使用的patter对象</li>
+<li>.pos 正则表达式搜索文本的开始位置</li>
+<li>.endpos 正则表达式搜索文本的结束位置</li>
+<li>.group(0) 获取匹配后的字符串</li>
+<li>.start() 匹配字符串在原始字符串的开始位置</li>
+<li>.end() 匹配字符串在原始字符串的结束位置</li>
+<li>.span() 返回(.span(), .end())</li>
+</ul>
+</li>
+</ul>
+<h4 id="os库"><a href="#os库" class="headerlink" title="os库"></a>os库</h4><p>路径操作<br><code>import os.path as op</code></p>
+<ul>
+<li><p>abspath(path)<br>返回path在当前系统中的绝对路径</p>
+</li>
+<li><p>normpath(path)<br>归一化path的表示形式，统一用\\分割路径</p>
+</li>
+<li><p>relpath(path)<br>返回当前程序与文件之间的相对路径</p>
+</li>
+<li><p>dirname(path)<br>返回path中的目录名称</p>
+</li>
+<li><p>basename(path)<br>返回path中最后的文件名称</p>
+</li>
+<li><p>join(path, *paths)</p>
+<p>组合path和paths,返回一个路径字符串</p>
+</li>
+<li><p>exists(path)<br>判断path对应文件或目录是否存在，返回True或False</p>
+</li>
+<li><p>isfile(path)<br>判断path所对应是否为已存在的文件，返回True或False</p>
+</li>
+<li><p>isdir(path)</p>
+<p>判断path所对应是否为已存在的目录，返回True或False</p>
+</li>
+<li><p>getatime(path)</p>
+<p>返回path对应文件或目录上一次的访问时间</p>
+</li>
+<li><p>getmtime(path)</p>
+<p>返回path对应文件或目录最近一次的修改时间</p>
+</li>
+<li><p>getctime(path)</p>
+<p>返回path对应文件或目录的创建时间</p>
+</li>
+<li><p>getsize(path)<br>返回path对应文件的大小</p>
+</li>
+</ul>
+<p>进程管理</p>
+<p><code>os.system(command)</code> 执行程序或命令command</p>
+<p>环境参数<br><code>os.chdir(path)</code> 修改当前程序操作的路径<br><code>os.getcwd()</code> 返回程序的当前路径<br><code>os.getlogin()</code> 获取当前系统登录用户名称<br><code>os.cpu_count()</code> 获取当前系统的CPU数量</p>
+<h4 id="sys库"><a href="#sys库" class="headerlink" title="sys库"></a>sys库</h4><p>常用参数</p>
+<ul>
+<li>sys.float_info<br>系统浮点数类型的参数信息</li>
+<li>sys.int_info<br>系统整数类型的参数信息</li>
+<li>sys.hash_info<br>系统哈希函数的参数信息</li>
+<li>sys.thread_info<br>系统线程实现的参数信息</li>
+<li>sys.byteorder<br>字节序标识，大端返回big, 小端返回little</li>
+<li>sys.executable<br>当前解释器可执行文件的绝对路径</li>
+<li>sys.maxunicode<br>系统支持的最大Unicode值，一般是1114111</li>
+<li>sys.path<br>解释器用来加载Python库的路径列表</li>
+<li>sys.argv<br>命令行参数的列表，其中argv[0]表示执行程序本身</li>
+<li>sys.dont_write_bytecode<br>如果为True，则不生成.pyc字节码</li>
+</ul>
+<p>常用函数</p>
+<ul>
+<li>sys.getrecursionlimit()<br>获取系统递归最大深度</li>
+<li>sys.setrecursionlimit(n)<br>设置系统递归最大深度为n</li>
+<li>sys.getdefaultencoding()<br>获得当前默认的字符串编码名称</li>
+<li>sys.getsizeod(object)<br>获得object的字节长度,object可以是任意类型</li>
+<li>sys.exit([arg])<br>退出Python程序，附带状态码arg</li>
+</ul>
+<h3 id="第三方库"><a href="#第三方库" class="headerlink" title="第三方库"></a>第三方库</h3><p>批量安装</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> os
+libs <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"numpy"</span><span class="token punctuation">,</span><span class="token string">"matplotlib"</span><span class="token punctuation">}</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span> 
+    <span class="token keyword">for</span> lib <span class="token keyword">in</span> libs<span class="token punctuation">:</span>
+        os<span class="token punctuation">.</span>system<span class="token punctuation">(</span><span class="token string">"pip install "</span> <span class="token operator">+</span> lib<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"successful"</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"failed Somehow"</span><span class="token punctuation">)</span></code></pre>
+<h4 id="PyInstaller库"><a href="#PyInstaller库" class="headerlink" title="PyInstaller库"></a>PyInstaller库</h4><p>将源代码装换成可执行文件</p>
+<p>简单使用<br><code>pyinstaller -F &lt;文件名.py&gt;</code></p>
+<p>列子</p>
+<p><code>pyinstaller -F a.py</code> 生成一个文件a.exe</p>
+<p><code>pyinstaller -i b.ico -F a.py</code> 生成一个带有图标的a.exe</p>
+<p><code>pyinstaller --distpath ./ -F a.py -n useful.exe</code> 当前目录下生成useful.exe</p>
+<h4 id="jieba库"><a href="#jieba库" class="headerlink" title="jieba库"></a>jieba库</h4><p>中文分词</p>
+<p>提供了三种分词模式，</p>
+<p>精确模式:将文本精确地切开，分词后无冗余，适合文本分词<br>全模式: 把文本中所有可能成词的词语都扫描出来，速度快，不能解决歧义<br>搜索引擎模式: 在精确模式基础上，对长词再次切分，提高召回率。 </p>
+<ul>
+<li><code>jieba.cut(s)</code> 精确模式，分词后返回一个迭代器，用for..in形式遍历结果</li>
+<li><code>jieba.lcuts(s)</code> 精确模式，分词后返回一个列表 </li>
+<li><code>jieba.cut(s, cut_all=True)</code> 全模式，分词后返回一个迭代器</li>
+<li><code>jieba.lcut(s, cut_all=True)</code> 全模式</li>
+<li><code>jieba.cut_for_search(s)</code> 搜索引擎模式，分词后返回一个迭代器，用for..in 形式遍历结果</li>
+<li><code>jieba.lcut_for_search(s)</code> 搜索引擎模式，分词后返回一个列表 </li>
+<li><code>jieba.add_word(w)</code> 向分词词典中增加新词w</li>
+</ul>
+<h4 id="wordcloud库"><a href="#wordcloud库" class="headerlink" title="wordcloud库"></a>wordcloud库</h4><p><code>w = wordcloud.WordCloud()</code></p>
+<ul>
+<li><p>w.generate(txt)<br>向WordCloud对象w中加载文本txt</p>
+</li>
+<li><p>w.to_file(filename)</p>
+<p>将词云输出为图像文件</p>
+</li>
+</ul>
+<p>使用步骤</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> wordcloud
+c <span class="token operator">=</span> wordcloud<span class="token punctuation">.</span>WordCloud<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 步骤1: 配置对象参数</span>
+c<span class="token punctuation">.</span>generate<span class="token punctuation">(</span><span class="token string">"One Python, One World"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 步骤2: 加载词云文本</span>
+c<span class="token punctuation">.</span>to_file<span class="token punctuation">(</span><span class="token string">"outfile.png"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 步骤3: 输出词云文件</span></code></pre>
+<p>WordCloud参数</p>
+<ul>
+<li>width 指定词云对象生成图片的宽度，默认400像素</li>
+<li>height 指定词云对象生成图片的高度，默认200像素</li>
+<li>min_font_size 指定词云中字体的最小字号，默认4号</li>
+<li>max_font_size 指定词云中字体的最大字号，根据高度自动调节 </li>
+<li>font_step 指定词云中字体的步进间隔，默认为1</li>
+<li>font_path 指定字体文件的路径</li>
+<li>max_words 指定词云显示的最大单词数量，默认为200</li>
+<li>stop_words 指定词云的排除词列表</li>
+<li>mask 指定词云形状，需要引用imread()函数，默认为长方形</li>
+<li>backgroud_color 指定词云图片的背景颜色，默认为黑色</li>
+</ul>
+<h4 id="pipenv库"><a href="#pipenv库" class="headerlink" title="pipenv库"></a>pipenv库</h4><p>提供了基于项目的虚拟环境维护及python库管理功能</p>
+<p> pipenv –venv 显示当前目录虚拟环境信息    </p>
+<p>pipenv –python 3.7 创建虚拟环境</p>
+<p>pipenv shell 进入虚拟环境的命令行</p>
+<p> pipenv install jieba 在虚拟环境中安装第三方库</p>
+<p>pipenv graph 显示依赖关系</p>
+<p>pipenv run python a.py 运行程序</p>
+<h4 id="QRcode库"><a href="#QRcode库" class="headerlink" title="QRcode库"></a>QRcode库</h4><p>img = make(txt, border=4)</p>
+<p>txt： 待转变为二维码的字符串或字节串等</p>
+<p>border: 设置二维码边的宽度</p>
+<p>img: 一个PIL库类型的图像句柄</p>
+<h4 id="更多第三方库"><a href="#更多第三方库" class="headerlink" title="更多第三方库"></a>更多第三方库</h4><h5 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h5><ul>
+<li>Numpy</li>
+<li>Pandas</li>
+<li>SciPy</li>
+</ul>
+<h5 id="数据可视化"><a href="#数据可视化" class="headerlink" title="数据可视化"></a>数据可视化</h5><ul>
+<li>Matplotlib</li>
+<li>Seaborn</li>
+<li>Mayavi</li>
+</ul>
+<h5 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h5><ul>
+<li>PyPDF2</li>
+<li>NLTK</li>
+<li>Python-docx</li>
+</ul>
+<h5 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h5><ul>
+<li>Scikit-learn</li>
+<li>TensorFlow</li>
+<li>MXNet</li>
+</ul>
+<h5 id="网络爬虫"><a href="#网络爬虫" class="headerlink" title="网络爬虫"></a>网络爬虫</h5><ul>
+<li>Requests</li>
+<li>Scrapy</li>
+<li>pyspider</li>
+</ul>
+<h5 id="Web信息提取"><a href="#Web信息提取" class="headerlink" title="Web信息提取"></a>Web信息提取</h5><ul>
+<li>Beautiful Soup</li>
+<li>Re</li>
+<li>Python-Goose</li>
+</ul>
+<h5 id="Web网站开发"><a href="#Web网站开发" class="headerlink" title="Web网站开发"></a>Web网站开发</h5><ul>
+<li>Django</li>
+<li>Pyramid</li>
+<li>Flask</li>
+<li>WeRoBot</li>
+</ul>
+<h5 id="网络应用开发"><a href="#网络应用开发" class="headerlink" title="网络应用开发"></a>网络应用开发</h5><ul>
+<li>MyQR</li>
+</ul>
+<h5 id="图形用户界面"><a href="#图形用户界面" class="headerlink" title="图形用户界面"></a>图形用户界面</h5><ul>
+<li>PyQt5</li>
+<li>wxPython</li>
+<li>PyGObject</li>
+</ul>
+<h5 id="游戏开发"><a href="#游戏开发" class="headerlink" title="游戏开发"></a>游戏开发</h5><ul>
+<li>PyGame</li>
+<li>Panda3D</li>
+<li>cocos2d</li>
+</ul>
+<h5 id="虚拟现实"><a href="#虚拟现实" class="headerlink" title="虚拟现实"></a>虚拟现实</h5><ul>
+<li>VR Zero</li>
+<li>pyovr</li>
+<li>Vizard</li>
+</ul>
+<h5 id="图形艺术"><a href="#图形艺术" class="headerlink" title="图形艺术"></a>图形艺术</h5><ul>
+<li>Quads</li>
+<li>ascii_art</li>
+<li>turtle</li>
+</ul>
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h3 id="三个特征"><a href="#三个特征" class="headerlink" title="三个特征"></a>三个特征</h3><ul>
+<li>封装<br>属性和方法抽象，用数据和操作数据的方法来形成对象逻辑<br>目标是形成一个类对外可操作属性和方法的接口</li>
+<li>继承<br>代码复用的高级抽象，用对象之间的继承关系来形成代码复用 </li>
+<li>多态<br>方法灵活性的抽象，让对象的操作更加灵活，更多复用代码</li>
+</ul>
+<h3 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h3><p><strong>类</strong> 逻辑抽象和产生对象的模板，一组变量和函数的特定编排</p>
+<p><strong>对象</strong> 具体表达数据及操作的实体，相当于程序中的”变量”</p>
+<p><strong>实例化</strong> 从类到对象的过程。</p>
+<p><strong>类对象</strong> 维护每个Python类基本信息的数据结构，是类定义完成后生成的一个对象那个</p>
+<p><strong>实例对象</strong> Python实例后产生的对象</p>
+<p><strong>类的构建</strong></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token operator">&lt;</span>类名<span class="token operator">></span><span class="token punctuation">:</span>
+    <span class="token string">"类的描述"</span> <span class="token comment" spellcheck="true"># 使用&lt;类名>.__doc__ 访问类描述</span>
+    <span class="token operator">&lt;</span>语句块<span class="token operator">></span></code></pre>
+<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><p>用于从类创建实例对象的过程</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token operator">&lt;</span>类名<span class="token operator">></span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">&lt;</span>参数列表<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token operator">&lt;</span>语句块<span class="token operator">></span></code></pre>
+<p><strong>self</strong> 代表的是实例对象</p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><ul>
+<li><p>类属性<br>类对象的属性，由所有实例对象所共享</p>
+</li>
+<li><p>实例属性<br>实例对象的属性，由各实例对象所独享</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token operator">&lt;</span>类名<span class="token operator">></span><span class="token punctuation">:</span>
+    <span class="token operator">&lt;</span>类属性名<span class="token operator">></span> <span class="token operator">=</span> <span class="token operator">&lt;</span>属性值<span class="token operator">></span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">&lt;</span>参数列表<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span><span class="token operator">&lt;</span>实例属性名<span class="token operator">></span> <span class="token operator">=</span> <span class="token operator">&lt;</span>实例属性初值<span class="token operator">></span>
+<span class="token operator">&lt;</span>类名<span class="token operator">></span><span class="token punctuation">.</span><span class="token operator">&lt;</span>类属性名<span class="token operator">></span>
+<span class="token operator">&lt;</span>对象名<span class="token operator">></span><span class="token punctuation">.</span><span class="token operator">&lt;</span>实例属性名<span class="token operator">></span></code></pre>
+</li>
+</ul>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><h4 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h4><p>实例对象的方法,由各实例对象独享,最常用的形式</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token operator">&lt;</span>类名<span class="token operator">></span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token operator">&lt;</span>方法名<span class="token operator">></span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">&lt;</span>参数列表<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+<span class="token comment" spellcheck="true"># 访问</span>
+<span class="token operator">&lt;</span>对象名<span class="token operator">></span><span class="token punctuation">.</span><span class="token operator">&lt;</span>方法名<span class="token operator">></span></code></pre>
+<h4 id="类方法"><a href="#类方法" class="headerlink" title="类方法"></a>类方法</h4><p>类对象的方法,由所有实例对象共享</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token operator">&lt;</span>类名<span class="token operator">></span><span class="token punctuation">:</span>
+    @classmethod
+    <span class="token keyword">def</span> <span class="token operator">&lt;</span>方法名<span class="token operator">></span><span class="token punctuation">(</span>cls<span class="token punctuation">,</span> <span class="token operator">&lt;</span>参数列表<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+        <span class="token comment" spellcheck="true"># cls 表示的是类对象</span>
+        <span class="token comment" spellcheck="true"># 只能操作类属性或其他类的方法</span>
+        <span class="token comment" spellcheck="true"># 不能操作实例属性和方法,即 不能使用self</span>
+<span class="token comment" spellcheck="true"># 访问</span>
+<span class="token operator">&lt;</span>类名<span class="token operator">></span><span class="token punctuation">.</span><span class="token operator">&lt;</span>方法名<span class="token operator">></span>
+<span class="token operator">&lt;</span>对象名<span class="token operator">></span><span class="token punctuation">.</span><span class="token operator">&lt;</span>方法名<span class="token operator">></span></code></pre>
+<h4 id="自由方法"><a href="#自由方法" class="headerlink" title="自由方法"></a>自由方法</h4><p>类中的一个普通函数,由类所在命名空间管理,类对象独享</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token operator">&lt;</span>类名<span class="token operator">></span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token operator">&lt;</span>方法名<span class="token operator">></span><span class="token punctuation">(</span><span class="token operator">&lt;</span>参数列表<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+           <span class="token comment" spellcheck="true"># 只能擦欧总类属性和类方法</span>
+        <span class="token keyword">pass</span> 
+<span class="token comment" spellcheck="true"># 访问</span>
+<span class="token operator">&lt;</span>类名<span class="token operator">></span><span class="token punctuation">.</span><span class="token operator">&lt;</span>方法名<span class="token operator">></span></code></pre>
+<h4 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h4><p>类中的一个普通函数,由类对象和实例对象共享</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token operator">&lt;</span>类名<span class="token operator">></span><span class="token punctuation">:</span>
+    @staticmethod
+    <span class="token keyword">def</span> <span class="token operator">&lt;</span>方法名<span class="token operator">></span><span class="token punctuation">(</span><span class="token operator">&lt;</span>参数列表<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+<span class="token comment" spellcheck="true"># 访问</span>
+<span class="token operator">&lt;</span>类名<span class="token operator">></span><span class="token punctuation">.</span><span class="token operator">&lt;</span>方法名<span class="token operator">></span>
+<span class="token operator">&lt;</span>对象名<span class="token operator">></span><span class="token punctuation">.</span><span class="token operator">&lt;</span>方法名<span class="token operator">></span><span class="token punctuation">(</span><span class="token operator">&lt;</span>参数列表<span class="token operator">></span><span class="token punctuation">)</span></code></pre>
+<h4 id="保留方法"><a href="#保留方法" class="headerlink" title="保留方法"></a>保留方法</h4><p>由双下划线开始和结束的方法,保留使用</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token operator">&lt;</span>类名<span class="token operator">></span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token operator">&lt;</span>保留方法名<span class="token operator">></span><span class="token punctuation">(</span><span class="token operator">&lt;</span>参数列表<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+        <span class="token comment" spellcheck="true"># 保留方法一般都对象类的某种操作,但操作产生时调用</span></code></pre>
+<h3 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token operator">&lt;</span>类名<span class="token operator">></span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__del__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token operator">&lt;</span>语句块<span class="token operator">></span>
+<span class="token comment" spellcheck="true"># 析构函数在真实删除对象时调用,当前引用为0,或程序结束 </span>
+sys<span class="token punctuation">.</span>getrefcount<span class="token punctuation">(</span><span class="token operator">&lt;</span>对象名<span class="token operator">></span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 获得对象的引用次数</span></code></pre>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><h4 id="公开类属性和私有类属性"><a href="#公开类属性和私有类属性" class="headerlink" title="公开类属性和私有类属性"></a>公开类属性和私有类属性</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token operator">&lt;</span>类名<span class="token operator">></span><span class="token punctuation">:</span>
+    <span class="token operator">&lt;</span>类属性名<span class="token operator">></span> <span class="token operator">=</span> <span class="token operator">&lt;</span>类属性初值<span class="token operator">></span>
+    <span class="token comment" spellcheck="true"># 私有类属性名在来时加上两个下划线__</span></code></pre>
+<h4 id="公开实例属性和私有属性"><a href="#公开实例属性和私有属性" class="headerlink" title="公开实例属性和私有属性"></a>公开实例属性和私有属性</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token operator">&lt;</span>类名<span class="token operator">></span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">&lt;</span>参数列表<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span><span class="token operator">&lt;</span>实例属性名<span class="token operator">></span> <span class="token operator">=</span> <span class="token operator">&lt;</span>实例属性初值<span class="token operator">></span>
+        <span class="token comment" spellcheck="true"># 私有实例属性名开始需要有两个下划线__</span></code></pre>
+<h4 id="私有方法"><a href="#私有方法" class="headerlink" title="私有方法"></a>私有方法</h4><p>同样是在前面加两个下划线__</p>
+<h4 id="保留属性"><a href="#保留属性" class="headerlink" title="保留属性"></a>保留属性</h4><p>双下划线开头和结尾</p>
+<ul>
+<li><code>__name__</code> 类的名称</li>
+<li><code>__qualname__</code> 以.分割从模块全局命令空间开始的类名称</li>
+<li><code>__bases__</code> 类所继承的基类名称</li>
+<li><code>&lt;类&gt;.__dict__</code> 包含类成员信息的字典,key是属性和方法名称,value是地址</li>
+<li><code>&lt;对象&gt;.__dict__</code> 包含对象属性信息的字典,key是属性名称,value是值</li>
+<li><code>__class__</code> 对象所对象的类的信息,即type信息</li>
+<li><code>__doc__</code> 类描述,写在类定义下的首行字符串,不能继承</li>
+<li><code>__module__</code> 类所在模块的名称</li>
+</ul>
+<h4 id="保留方法-1"><a href="#保留方法-1" class="headerlink" title="保留方法"></a>保留方法</h4><table>
+<thead>
+<tr>
+<th align="center">保留方法</th>
+<th align="center">对应操作</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>obj.__init__()</code></td>
+<td align="center">obj = ClassName()</td>
+<td align="center">初始化实例对象的函数逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>obj.__del__()</code></td>
+<td align="center">del obj</td>
+<td align="center">删除实例对象的函数逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>obj.__repr__()</code></td>
+<td align="center">repr(obj)</td>
+<td align="center">定义对象可打印字符串的函数逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>obj.__str__()</code></td>
+<td align="center">str(obj)</td>
+<td align="center">定义对象字符串转换操作的函数逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>obj.__bytes__()</code></td>
+<td align="center">bytes(obj)</td>
+<td align="center">定义对象字节串转换操作的函数逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>obj.__format__()</code></td>
+<td align="center">obj.format()</td>
+<td align="center">定义对象格式化输出的函数逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>obj.__hash__()</code></td>
+<td align="center">hash(obj)</td>
+<td align="center">定义对象哈希操作的函数逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>obj.__bool__()</code></td>
+<td align="center">bool(obj)</td>
+<td align="center">定义对象布尔运算的函数逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>obj.__len__()</code></td>
+<td align="center">len(obj)</td>
+<td align="center">定义对象长度操作的函数逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>obj.__reversed__()</code></td>
+<td align="center">obj.reversed()</td>
+<td align="center">定义对象逆序的函数逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>obj.__abs__()</code></td>
+<td align="center">abs(obj)</td>
+<td align="center">定义对象绝对值操作的函数逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>obj.__int__()</code></td>
+<td align="center">int(obj)</td>
+<td align="center">定义对象整数转换的函数逻辑</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">保留方法</th>
+<th align="center">对应操作</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>obj.__lt__()</code></td>
+<td align="center">obj1 &lt; obj2</td>
+<td align="center">对象间比较操作的保留方法</td>
+</tr>
+<tr>
+<td align="center"><code>obj.__le__()</code></td>
+<td align="center">obj1 &lt;= obj2</td>
+<td align="center">对象间比较操作的保留方法</td>
+</tr>
+<tr>
+<td align="center"><code>obj.__eq__()</code></td>
+<td align="center">obj1 == obj2</td>
+<td align="center">对象间比较操作的保留方法</td>
+</tr>
+<tr>
+<td align="center"><code>obj.__ne__()</code></td>
+<td align="center">obj1 != obj2</td>
+<td align="center">对象间比较操作的保留方法</td>
+</tr>
+<tr>
+<td align="center"><code>obj.__gt__()</code></td>
+<td align="center">obj1 &gt; obj2</td>
+<td align="center">对象间比较操作的保留方法</td>
+</tr>
+<tr>
+<td align="center"><code>obj.__ge__()</code></td>
+<td align="center">obj1 &gt;= obj2</td>
+<td align="center">对象间比较操作的保留方法</td>
+</tr>
+</tbody></table>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><h4 id="类继承的构建"><a href="#类继承的构建" class="headerlink" title="类继承的构建"></a>类继承的构建</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token operator">&lt;</span>类名<span class="token operator">></span><span class="token punctuation">(</span><span class="token operator">&lt;</span>基类名<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">&lt;</span>参数列表<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token operator">&lt;</span>语句块<span class="token operator">></span></code></pre>
+<p>基类的属性基本等同于定义在派生类中</p>
+<p>派生类可以直接使用基类的类属性 实例属性</p>
+<p>派生类可以直接使用基类的各种方法</p>
+<p>使用基类的类方法和类属性时,要用基类的类名调用</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">DemoClass</span><span class="token punctuation">:</span>
+    count <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment" spellcheck="true"># 定义类属性</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name <span class="token comment" spellcheck="true"># 定义实例属性</span>
+        DemoClass<span class="token punctuation">.</span>count <span class="token operator">+=</span> <span class="token number">1</span> <span class="token comment" spellcheck="true"># 对类属性进行操作</span>
+    <span class="token keyword">def</span> <span class="token function">getName</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 定义实例方法</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>name
+<span class="token keyword">class</span> <span class="token class-name">HumanNameClass</span><span class="token punctuation">(</span>DemoClass<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 继承DemoClass</span>
+    <span class="token keyword">def</span> <span class="token function">printName</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 通过&lt;基类名>.&lt;属性名>调用类属性</span>
+        <span class="token comment" spellcheck="true"># 通过self.&lt;属性名></span>
+        <span class="token keyword">return</span> str<span class="token punctuation">(</span>DemoClass<span class="token punctuation">.</span>count<span class="token punctuation">)</span> <span class="token operator">+</span> self<span class="token punctuation">.</span>name
+dc1 <span class="token operator">=</span> HumanNameClass<span class="token punctuation">(</span><span class="token string">"老王"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>dc1<span class="token punctuation">.</span>getName<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>dc1<span class="token punctuation">.</span>printName<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h4 id="与继承判断有关的Python内置函数"><a href="#与继承判断有关的Python内置函数" class="headerlink" title="与继承判断有关的Python内置函数"></a>与继承判断有关的Python内置函数</h4><ul>
+<li><code>isinstance(obj, cls)</code> 判断对象是否是类cls的实例或子类实例,返回True/False</li>
+<li><code>issubclass(cls1, cls2)</code> 判断类cls1是否是类cls2的子类, 返回True/False </li>
+</ul>
+<h4 id="派生类的约束"><a href="#派生类的约束" class="headerlink" title="派生类的约束"></a>派生类的约束</h4><p>派生类只能继承基类的公开属性和方法</p>
+<p>派生类不能继承基类的私有属性和私有方法</p>
+<h4 id="最基础类"><a href="#最基础类" class="headerlink" title="最基础类"></a>最基础类</h4><p>object类是Python所有类的基类,所有类定义时默认继承object类,保留属性和保留方法本质上是object类的属性和方法</p>
+<h4 id="对象三要素"><a href="#对象三要素" class="headerlink" title="对象三要素"></a>对象三要素</h4><ul>
+<li>标识identity 对象一旦构建不会改变,用id()获得,一般是内存地址</li>
+<li>类型type 对象的类型,用type()获得</li>
+<li>值value 分为可变mutable与不可变immutable两种</li>
+</ul>
+<h4 id="内置功能"><a href="#内置功能" class="headerlink" title="内置功能"></a>内置功能</h4><ul>
+<li>id(x) 返回x的标识</li>
+<li>x is y 判断x和y的标识是否相等,返回True/False,不判断值</li>
+</ul>
+<h4 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h4><p>派生类对基类属性或方法的再定义</p>
+<ul>
+<li><p>属性重载<br>派生类定义并使用了与基类相同名称的属性<br>采用最近覆盖原则</p>
+<ul>
+<li>优先使用派生类重定义的属性和方法</li>
+<li>然后寻找基类的属性和方法</li>
+<li>再寻找超类的属性和方法</li>
+</ul>
+</li>
+<li><p>方法重载<br>派生类定义并使用了与基类相同名称的方法</p>
+<ul>
+<li><p>完全重载<br>派生类完全重定义与基类相同名称的方法，直接在派生类中定义同名方法即可。</p>
+</li>
+<li><p>增量重载<br>派生类扩展定义与基类相同名称的方法 </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token operator">&lt;</span>派生类名<span class="token operator">></span><span class="token punctuation">(</span><span class="token operator">&lt;</span>基类名<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token operator">&lt;</span>方法名<span class="token operator">></span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">&lt;</span>参数列表<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        super<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token operator">&lt;</span>基类方法名<span class="token operator">></span><span class="token punctuation">(</span><span class="token operator">&lt;</span>参数列表<span class="token operator">></span><span class="token punctuation">)</span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="多继承的构建"><a href="#多继承的构建" class="headerlink" title="多继承的构建"></a>多继承的构建</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token operator">&lt;</span>类名<span class="token operator">></span><span class="token punctuation">(</span><span class="token operator">&lt;</span>基类名<span class="token number">1</span><span class="token operator">></span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>基类名<span class="token number">2</span><span class="token operator">></span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">,</span> <span class="token operator">&lt;</span>基类名N<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">&lt;</span>参数列表<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token operator">&lt;</span>语句块<span class="token operator">></span></code></pre>
+<p>Python采用深度优先、从左至右的方法实施多继承</p>
+<h3 id="类的运算"><a href="#类的运算" class="headerlink" title="类的运算"></a>类的运算</h3><p>Python解释器通过保留方法预留了一批运算的接口，需要重载。<br>保留方法一般对应运算符，Python中运算体现为运算符的重载。</p>
+<p>但是运算重载不能重载内置类型的运算符，不能新建运算符，is and not or 不能被重载</p>
+<p>一元运算重载</p>
+<table>
+<thead>
+<tr>
+<th align="center">保留方法</th>
+<th align="center">对应操作</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>__neg__(self)</code></td>
+<td align="center">-obj</td>
+<td align="center">定义对象取负的运算逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>__pos__(self)</code></td>
+<td align="center">+obj</td>
+<td align="center">定义对象取正的运算逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>__abs__(self)</code></td>
+<td align="center">abs(obj)</td>
+<td align="center">定义对象绝对值的运算逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>__invert__(self)</code></td>
+<td align="center">~obj</td>
+<td align="center">定义对象取反的运算逻辑</td>
+</tr>
+</tbody></table>
+<p>二元运算的重载</p>
+<table>
+<thead>
+<tr>
+<th align="center">保留方法</th>
+<th align="center">对应操作</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>__add__(self, other)</code></td>
+<td align="center">obj+other</td>
+<td align="center">定义两个对象加法的逻辑运算</td>
+</tr>
+<tr>
+<td align="center"><code>__sub__(self, other)</code></td>
+<td align="center">obj-other</td>
+<td align="center">定义两个对象减法的运算逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>__mul__(self, other)</code></td>
+<td align="center">obj*other</td>
+<td align="center">定义两个对象乘法的运算逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>__truediv__(self, other)</code></td>
+<td align="center">obj/other</td>
+<td align="center">定义两个对象除法的运算逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>__mod__(self, other)</code></td>
+<td align="center">obj%other</td>
+<td align="center">定义两个对象模的运算逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>__floordiv__(self, other)</code></td>
+<td align="center">obj//other</td>
+<td align="center">定义两个对象整数除的运算逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>__divmod__(self, other)</code></td>
+<td align="center">divmod(obj, other)</td>
+<td align="center">定义两个对象除模的运算逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>__pow__(self, other)</code></td>
+<td align="center">obj**other</td>
+<td align="center">定义对象幂的运算逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>__lshift__(self, other)</code></td>
+<td align="center">obj&lt;&lt;other</td>
+<td align="center">定义对象左移的运算逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>__rshift__(self, other)</code></td>
+<td align="center">obj&gt;&gt;other</td>
+<td align="center">定义对象右移的运算逻辑</td>
+</tr>
+</tbody></table>
+<p>比较运算符重载</p>
+<table>
+<thead>
+<tr>
+<th align="center">保留方法</th>
+<th align="center">对应操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>__lt__(self, other)</code></td>
+<td align="center">obj&lt;other</td>
+</tr>
+<tr>
+<td align="center"><code>__le__(self, other)</code></td>
+<td align="center">obj&lt;=other</td>
+</tr>
+<tr>
+<td align="center"><code>__eq__(self, other)</code></td>
+<td align="center">obj==other</td>
+</tr>
+<tr>
+<td align="center"><code>__ne__(self, other)</code></td>
+<td align="center">obj!=other</td>
+</tr>
+<tr>
+<td align="center"><code>__gt__(self, other)</code></td>
+<td align="center">obj&gt;other</td>
+</tr>
+<tr>
+<td align="center"><code>__ge__(self, other)</code></td>
+<td align="center">obj&gt;=other</td>
+</tr>
+</tbody></table>
+<p>成员运算的重载</p>
+<table>
+<thead>
+<tr>
+<th align="center">保留方法</th>
+<th align="center">对应操作</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>__getitem__(self, key)</code></td>
+<td align="center">obj[k]</td>
+<td align="center">定义获取对象中序号k元素的运算逻辑，k为整数</td>
+</tr>
+<tr>
+<td align="center"><code>__setitem__(self,key,value)</code></td>
+<td align="center">obj[k]=v</td>
+<td align="center">定义赋值对象中序号k元素的运算逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>__delitem__(self,key)</code></td>
+<td align="center">del obj[k]</td>
+<td align="center">定义删除对象中序号k元素的运算逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>__reversed__(self)</code></td>
+<td align="center">obj.reversed()</td>
+<td align="center">定义对象逆序的运算逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>__contains__(self, item)</code></td>
+<td align="center">item in obj</td>
+<td align="center">定义in操作符对应的运算逻辑</td>
+</tr>
+</tbody></table>
+<p>其他运算的重载</p>
+<table>
+<thead>
+<tr>
+<th align="center">保留方法</th>
+<th align="center">对应操作</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>__repr__(self)</code></td>
+<td align="center">repr(obj)</td>
+<td align="center">定义对象可打印字符串的运算逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>__str__(self)</code></td>
+<td align="center">str(obj)</td>
+<td align="center">定义对象字符串转换操作的运算逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>__len__(self)</code></td>
+<td align="center">len(obj)</td>
+<td align="center">定义对象长度操作的运算逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>__int__(self)</code></td>
+<td align="center">int(obj)</td>
+<td align="center">定义对象整数转换的运算逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>__float__(self)</code></td>
+<td align="center">float(obj)</td>
+<td align="center">定义对象浮点数转换的运算逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>__complex__(self)</code></td>
+<td align="center">complex(obj)</td>
+<td align="center">定义对象复数转换的运算逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>__round__(self)</code></td>
+<td align="center">round(obj)</td>
+<td align="center">定义对象四舍五入的运算逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>__bytes__(self)</code></td>
+<td align="center">bytes(obj)</td>
+<td align="center">定义对象字节串转换的运算逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>__bool__()</code></td>
+<td align="center">bool(obj)</td>
+<td align="center">定义对象布尔运算的运算逻辑</td>
+</tr>
+<tr>
+<td align="center"><code>__format__(self, format,_spec)</code></td>
+<td align="center">obj.format()</td>
+<td align="center">定义对象格式化输出的运算逻辑</td>
+</tr>
+</tbody></table>
+<h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p> 参数类型的多态 一个方法能够处理多个类型的能力</p>
+<p>参数形式的多态 一个方法能够接受多个参数的能力</p>
+<h3 id="类的引用"><a href="#类的引用" class="headerlink" title="类的引用"></a>类的引用</h3><p>引用(reference) 对象的指针</p>
+<p>引用是内存中真实对象的指针，表示为变量名或内存地址，每个对象存在至少一个引用，id()函数用于获得引用，在传递参数和赋值时，Python传递对象的引用，而不是复制对象</p>
+<p>对于不可变对象，解释器为相同值维护尽量少的内存区域；对于可变对象，解释器为每个对象维护不同内存区域。</p>
+<h4 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h4><p>仅复制最顶层对象的拷贝方式，默认拷贝方式</p>
+<pre class=" language-python"><code class="language-python">ls <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Python"</span><span class="token punctuation">,</span> <span class="token number">123</span><span class="token punctuation">]</span>
+la <span class="token operator">=</span> ls<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+lb <span class="token operator">=</span> ls<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+lc <span class="token operator">=</span> list<span class="token punctuation">(</span>ls<span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token punctuation">[</span>ls<span class="token punctuation">,</span> la<span class="token punctuation">,</span> lb<span class="token punctuation">,</span> lc<span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> c <span class="token keyword">in</span> i<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> id<span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">" "</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> id<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 输出结果</span>
+<span class="token comment" spellcheck="true"># Python 913413848 123 915415464 ['Python', 123] 91113434</span>
+<span class="token comment" spellcheck="true"># Python 913413848 123 915415464 ['Python', 123] 91222222</span>
+<span class="token comment" spellcheck="true"># 列表被拷贝了，但是元素没有被拷贝</span></code></pre>
+<h4 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h4><p>迭代复制所有对象的拷贝方式</p>
+<p>采用copy库的deepcopy()方法</p>
+<p>深拷贝仅针对可变类型，不可变类型无需创建新的对象</p>
+<h2 id="构建计算生态"><a href="#构建计算生态" class="headerlink" title="构建计算生态"></a>构建计算生态</h2><h3 id="库、模块、包"><a href="#库、模块、包" class="headerlink" title="库、模块、包"></a>库、模块、包</h3><h4 id="库-Library"><a href="#库-Library" class="headerlink" title="库(Library)"></a>库(Library)</h4><p>一种对特定功能集合的通俗说法<br>包含一些程序功能，通过import引入使用，对应模块和包</p>
+<h4 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h4><p>以单个文件为命令空间的代码片段<br>模块名就是文件名<br>本质是一个独立的、由模块名组织的命名空间<br>在import时一次性执行，但是对于单下划线的顶层命名元素，不会再from…import * 时被导入</p>
+<ul>
+<li><p>名称属性<br>表达模块名称的预定义变量<br>通过<code>__name__</code> 获取<br>当程序以脚本方式直接执行时，<code>__name__</code>的值为<code>__main__</code><br>当程序以模块方式被引用执行时，<code>__name__</code>的值为模块名称<br>可以用来区分程序以何种方式执行</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># m.py文件</span>
+<span class="token keyword">def</span> <span class="token function">_module_func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>__name__<span class="token punctuation">)</span> 
+<span class="token comment" spellcheck="true"># a.py文件</span>
+<span class="token keyword">import</span> m
+
+<span class="token comment" spellcheck="true"># 当直接执行m.py文件时，输出结果为 __main__</span>
+<span class="token comment" spellcheck="true"># 当执行a.py文件时，输出结果为m</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+  <span class="token comment" spellcheck="true"># 作为模块主体功能的单元测试部分</span>
+    <span class="token comment" spellcheck="true"># 作为模块内部保留的额外功能部分</span></code></pre>
+</li>
+</ul>
+<h4 id="包-Package"><a href="#包-Package" class="headerlink" title="包(Package)"></a>包(Package)</h4><p>由一组模块构成，有层次命名空间的程序功能<br>每个包中一定有一个<code>__init__.py</code>文件</p>
+<h3 id="模块和包的构建"><a href="#模块和包的构建" class="headerlink" title="模块和包的构建"></a>模块和包的构建</h3><h4 id="模块构建的原则"><a href="#模块构建的原则" class="headerlink" title="模块构建的原则"></a>模块构建的原则</h4><ul>
+<li>功能闭包<br>单一.py文件实现单一且完整的功能</li>
+<li>抽象适度<br>用函数或类进行抽象，结合功能选择合适抽象</li>
+<li>操作闭包<br>模块无顶层可执行语句，导入时无输出，尽量无全局变量</li>
+</ul>
+<h4 id="包的构建"><a href="#包的构建" class="headerlink" title="包的构建"></a>包的构建</h4><ul>
+<li>常规包<br>通过<code>__init__.py</code>对文件和目录组织形成的包<br>在包被导入的时候，<code>__init__.py</code>会被执行</li>
+<li>命名空间包<br>由更分散子包组成的包</li>
+<li><code>__all__属性</code><br>from…import * 形式需要在<code>__init__.py</code>文件中增加<code>__all__</code>属性赋值<br><code>__all__</code>需要被赋值为列表对象，包含当前包下所有希望被导入的模块名称<br><code>__all__</code>用来辅助导入模块，但不能辅助导入列表</li>
+<li>常规包的构建流程<br>设计好包层次结构(命名空间)，每个目录配置一个<code>__init__.py</code>文件<br>完善<code>__init__.py</code>文件，并酌情赋值<code>_all__</code>属性<br>再次理解包和模块的不同，模块提供功能，包提供命名空间</li>
+<li>常规包的导入流程<br>每个包仅被导入一次，且包导入按照层次结构进行<br>直接导入包不能调用功能，需要导入到模块层次<br><code>from...import</code> 直接导入具体模块，可以简化调用时命令空间表达</li>
+<li>命名空间包<br>表达命名空间层次结构的一种逻辑包形式<br>命名空间中各部分可以在不同的文件系统位置<br>命名空间中各子包并不包含<code>__init__.py</code>文件(普通目录)<br>Python解释器通过<code>sys.path</code>变量来隐式维护命令空间<br><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://gitee.com//easyleroy/blogimage/raw/master/img/20200508092825.png" alt=""><br><code>sys.path</code> 指定搜索路径的字符串列表，路径是相对或绝对路径，可以用sys.path.append(p)增加新路径p，载入后，根据其中包的名称和层次结构自然组成了命名空间包<br><code>__path__</code>属性记录了某个包的绝对或相对路径</li>
+</ul>
+<h3 id="深入import系统"><a href="#深入import系统" class="headerlink" title="深入import系统"></a>深入import系统</h3><p>扩展命名空间及功能的方法</p>
+<p>import 保留字、<code>__import__()</code>函数和importlib标准库</p>
+<h4 id="模块的查找"><a href="#模块的查找" class="headerlink" title="模块的查找"></a>模块的查找</h4><ul>
+<li>查找<code>sys.modules</code>，之前被引入模块的缓存。</li>
+<li>如果没有找到， 则通过用户定义的import钩子查找</li>
+<li>如果没有，查找内置模块路径</li>
+<li>如果没有，在sys.path中查找 </li>
+</ul>
+<h4 id="模块的加载"><a href="#模块的加载" class="headerlink" title="模块的加载"></a>模块的加载</h4><ul>
+<li>找到模块后，如果模块对象存在，则使用现有模块对象</li>
+<li>如果没有，创建一个模块对象，将其加入<code>sys.modules</code></li>
+<li>在程序当前命名空间执行模块代码</li>
+</ul>
+<h3 id="第三方库的发布"><a href="#第三方库的发布" class="headerlink" title="第三方库的发布"></a>第三方库的发布</h3><h4 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h4><p>PyPI 用来登记第三方库信息</p>
+<p>Github、bitbucket 存储第三方库源代码及文档 </p>
+<p>项目project PyPI上一组发布和文件的统称</p>
+<p>发布release 项目的一个特定版本，每个发布有一个确定的版本号</p>
+<p>文件file，一次发布包含的具体文件</p>
+<p>需要使用setuptools、wheel、twine工具</p>
+<h4 id="基本发布方法"><a href="#基本发布方法" class="headerlink" title="基本发布方法"></a>基本发布方法</h4><ul>
+<li>整理目录结构</li>
+<li>创建其他相关文件<br>setup.py 配置发布信息的文件，很重要<br>README.md 说明文件<br>LICENSE 版权声明文件 </li>
+<li>执行打包命令<code>python setup.py sdist(源发布) bdist_wheel(可执行发布)</code></li>
+<li>执行发布命令<code>twine upload dist/*</code></li>
+</ul>
+<h4 id="发布概念"><a href="#发布概念" class="headerlink" title="发布概念"></a>发布概念</h4><ul>
+<li>打包发布<br>对文件整理打包后进行发布</li>
+<li>源发布<br>发布源代码的方式，简称sdist</li>
+<li>可执行发布<br>发布编译后可执行代码的方式 </li>
+</ul>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="easydeleroy.github.io" rel="external nofollow noreferrer">Leroy</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="easydeleroy.github.io/posts/94c2.html">easydeleroy.github.io/posts/94c2.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="easydeleroy.github.io" target="_blank">Leroy</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/548c.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Tkinter笔记">
+                        
+                        <span class="card-title">Tkinter笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Tkinter 简介Tkinter 是使用 python 进行窗口视窗设计的模块。Tkinter模块(“Tk 接口”)是Python的标准Tk GUI工具包的接口。作为 python 特定的GUI界面，是一个图像的窗口，tkinter是py
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-09
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Leroy
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/GUI/">
+                        <span class="chip bg-color">GUI</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/34bb.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Python核心编程第二版-笔记">
+                        
+                        <span class="card-title">Python核心编程第二版-笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            模块结构和布局用模块来合理组织代码
+# !/usr/bin/env python                      #起始行
+"this is a test module"                 #模块文档(文档字符串)
+
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Leroy
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="easydeleroy.github.io" target="_blank">Leroy</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">39.5k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "6";
+                    var startDate = "28";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/easydeleroy" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:leroy_it@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=651350292" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 651350292" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+
+        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
+        <script>
+        $('a').each(function() {
+          const $this = $(this);
+          const href = $this.attr('href');
+          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
+            const strs = href.split('/');
+            if (strs.length >= 3) {
+                const host = strs[2];
+                if (host !== '' || window.location.host) {
+                    $this.attr('href', '/go.html?u='+href+'').attr('rel', 'external nofollow noopener noreferrer');
+                    if (true) {
+                        $this.attr('target', '_blank');
+                    }
+                }
+            }
+          }
+        });
+        </script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
+<script type="text/javascript">
+    //只在桌面版网页启用特效
+    var windowWidth = $(window).width();
+    console.log(windowWidth);
+    if (windowWidth > 768) {
+        document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+    }
+    </script>
+</html>
