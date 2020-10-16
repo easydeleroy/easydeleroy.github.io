@@ -4,11 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Python核心编程第二版-笔记, Leroy">
-    <meta name="description" content="模块结构和布局用模块来合理组织代码
-# !/usr/bin/env python                      #起始行
-&#34;this is a test module&#34;                 #模块文档(文档字符串)
-">
+    <meta name="keywords" content="Python高级, Leroy">
+    <meta name="description" content="
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Python核心编程第二版-笔记 | Leroy</title>
+    <title>Python高级 | Leroy</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Python核心编程第二版-笔记</h1>
+                    <h1 class="description center-align post-title">Python高级</h1>
                 </div>
             </div>
         </div>
@@ -455,7 +455,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    495
+                    52
                 </div>
                 
 
@@ -468,86 +468,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="模块结构和布局"><a href="#模块结构和布局" class="headerlink" title="模块结构和布局"></a>模块结构和布局</h2><p>用模块来合理组织代码</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># !/usr/bin/env python                      #起始行</span>
-<span class="token string">"this is a test module"</span>                 <span class="token comment" spellcheck="true">#模块文档(文档字符串)</span>
-<span class="token keyword">import</span> sys                                <span class="token comment" spellcheck="true">#模块导入</span>
-<span class="token keyword">import</span> os
-
-debug <span class="token operator">=</span> <span class="token boolean">True</span>                            <span class="token comment" spellcheck="true">#变量定义</span>
-<span class="token keyword">class</span> <span class="token class-name">FooClass</span> <span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>                <span class="token comment" spellcheck="true">#类定义</span>
-    <span class="token string">"Fool Class"</span>
-    <span class="token keyword">pass</span>
-<span class="token keyword">def</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>                                <span class="token comment" spellcheck="true">#函数定义            </span>
-    <span class="token string">"test function"</span>
-    <span class="token keyword">pass</span>
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>                <span class="token comment" spellcheck="true">#主程序</span>
-    <span class="token comment" spellcheck="true"># 这里的__name__是用来判断模块是被导入的还是被直接执行的</span>
-    <span class="token comment" spellcheck="true"># 如果模块是被导入的，__name__的值为模块名字</span>
-    <span class="token comment" spellcheck="true"># 如果模块是被直接执行，__name__的值为'__main__'</span>
-    test<span class="token punctuation">(</span><span class="token punctuation">)</span>                                <span class="token comment" spellcheck="true"># 放置测试代码</span></code></pre>
-<p>绝大多数模块的创建的目的是为了被别人调用而不是作为独立执行的脚本。</p>
-<p>创建文件脚本</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/env/ python</span>
-
-<span class="token string">'makeTextFile.py -- create text file'</span>
-
-<span class="token keyword">import</span> os
-
-<span class="token comment" spellcheck="true"># 用户输入文件名</span>
-<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
-  fname <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"请输入要创建的文件名:"</span><span class="token punctuation">)</span>
-  <span class="token keyword">if</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>fname<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 用来判断是否存在该文件，如果存在则返回true</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"%s文件已存在"</span> <span class="token operator">%</span> fname<span class="token punctuation">)</span>
-  <span class="token keyword">else</span><span class="token punctuation">:</span>
-    <span class="token keyword">break</span>
-
-<span class="token comment" spellcheck="true"># 用户输入文件内容</span>
-all <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"请输入文件内容，并以.作为结束符\n"</span><span class="token punctuation">)</span>
-
-<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
-  entry <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'>'</span><span class="token punctuation">)</span>
-  <span class="token keyword">if</span> entry <span class="token operator">==</span> <span class="token string">'.'</span><span class="token punctuation">:</span>
-    <span class="token keyword">break</span>
-  <span class="token keyword">else</span><span class="token punctuation">:</span>
-    all<span class="token punctuation">.</span>append<span class="token punctuation">(</span>entry<span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># 将用户输入的内容保存到文件中去</span>
-fobj <span class="token operator">=</span> open<span class="token punctuation">(</span>fname<span class="token punctuation">,</span><span class="token string">'w'</span><span class="token punctuation">)</span>
-fobj<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>all<span class="token punctuation">)</span><span class="token punctuation">)</span>
-fobj<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"完成"</span><span class="token punctuation">)</span></code></pre>
-<h2 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h2><p>数字是不可更改类型，变更数字的值会生成新的对象。</p>
-<h3 id="整形"><a href="#整形" class="headerlink" title="整形"></a>整形</h3><ul>
-<li>布尔型<br>0 和 其他数</li>
-<li>标准整形</li>
-<li>长整型<br>在数字的最后写上L来表示长整型</li>
-</ul>
-<h3 id="双精度浮点型"><a href="#双精度浮点型" class="headerlink" title="双精度浮点型"></a>双精度浮点型</h3><p>52个位用于表示底，11个位用于表示指数，剩下一位表示符号。</p>
-<h3 id="复数"><a href="#复数" class="headerlink" title="复数"></a>复数</h3><p>虚数的语法:real + imagj</p>
-<p>内置属性</p>
-<table>
-<thead>
-<tr>
-<th align="center">属性</th>
-<th align="center">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">num.real</td>
-<td align="center">该复数的实部</td>
-</tr>
-<tr>
-<td align="center">num.imag</td>
-<td align="center">该复数的虚部</td>
-</tr>
-<tr>
-<td align="center">num.conjugate()</td>
-<td align="center">返回该复数的共轭复数</td>
-</tr>
-</tbody></table>
-<h3 id="操作数"><a href="#操作数" class="headerlink" title="操作数"></a>操作数</h3><script>
+                <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -899,7 +820,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">39.5k</span>&nbsp;字
+                class="white-color">42.5k</span>&nbsp;字
             
             
             
